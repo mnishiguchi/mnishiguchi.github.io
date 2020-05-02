@@ -10,7 +10,7 @@
         {% if each[1] == page.url %}
         <a class="nav-item active">{{ each[0] }}</a>
         {% else %}
-        <a class="nav-item" href="{{ each[1] | prepend: site.baseurl }}">{{ each[0] }}</a>
+        <a class="nav-item" href="{{ each[1] }}">{{ each[0] }}</a>
         {% endif %}
         {% endfor %}
       </div>

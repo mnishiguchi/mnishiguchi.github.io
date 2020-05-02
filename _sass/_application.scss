@@ -3,6 +3,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  min-height: 80vh;
+}
+
 .mn-AppHeader {
   background: $mn-blue;
   margin-bottom: 2rem;

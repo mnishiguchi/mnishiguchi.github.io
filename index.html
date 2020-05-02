@@ -3,20 +3,20 @@ title: Home
 layout: application
 ---
 
-{% for page in paginator.posts %}
-  <article>
-    {% include post_header.html %}
+<img src="/assets/images/masa-chinatown--mint.png" alt="{{ site.author.name }}">
 
-    {{ page.excerpt }}
+<p>
+  I am passionate about building maintainable web applications using primarily Ruby, Rails and React.
+</p>
 
-    {% unless page.excerpt == page.content %}
-      <footer>
-        <a class="ghost" href="{{ page.url | prepend: site.baseurl }}">
-          {{ site.read_more_text }}
-        </a>
-      </footer>
-    {% endunless %}
-  </article>
-{% endfor %}
+<h2>I am good at</h2>
+<p>
+  writing maintainable clean code in Ruby and Javascript
+</p>
 
-{% include post_pagination.html %}
+<h2>I know and enjoy</h2>
+<p>
+  Android, Angular, C++, Design Patterns, Elasticsearch, Elixir, GIMP, Git, Heroku, HTML5, Java, Javascript,
+  Jekyll, jQuery, Kotlin, Linux, Netlify, Nginx, Object-Oriented Programming, Phoenix, PostgreSQL, React,
+  Redux, RSpec, Ruby, SASS, Webpack, Wordpress, and more.
+</p>

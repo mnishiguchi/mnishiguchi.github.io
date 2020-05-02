@@ -5,4 +5,3 @@ source "https://rubygems.org"
 gem "jekyll", "~> 4.0"
 gem 'jekyll-seo-tag'
 gem "jekyll-gist"
-gem "jekyll-paginate"
