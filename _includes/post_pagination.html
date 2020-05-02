@@ -1,0 +1,25 @@
+{% if paginator.total_pages > 1 %}
+  <nav class="d-flex justify-content-between">
+    {% if paginator.previous_page %}
+      <a class="btn btn-primary" href="{{ paginator.previous_page_path }}">
+        « newer posts
+      </a>
+    {% else %}
+      <button class="btn btn-secondary-outline" disabled>
+        « newer posts
+      </button>
+    {% endif %}
+
+    <span class="d-none d-sm-block">page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+    {% if paginator.next_page %}
+      <a class="btn btn-primary" href="{{ paginator.next_page_path }}">
+        older posts »
+      </a>
+    {% else %}
+      <button class="btn btn-secondary-outline" disabled>
+        older posts »
+      </button>
+    {% endif %}
+  </nav>
+{% endif %}

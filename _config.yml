@@ -32,7 +32,7 @@ social_links:
   - [github, "https://github.com/mnishiguchi"]
   - [linkedin, "https://linkedin.com/in/mnishiguchi"]
   - [stack-overflow, "https://stackoverflow.com/users/3837223/mnishiguchi"]
-paginate: 2
+paginate: 5
 excerpt_separator: "\n\n\n" # two blank lines
 read_more_text: "read more »"
 empty_array: []

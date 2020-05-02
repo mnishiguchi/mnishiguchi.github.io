@@ -1,0 +1,39 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mn-AppHeader {
+  background: $mn-blue;
+  margin-bottom: 2rem;
+
+  &-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  * {
+    color: white;
+  }
+}
+
+.mn-AppFooter {
+  background: $mn-blue;
+  margin-top: 2rem;
+
+  &-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  * {
+    color: white;
+  }
+}
+
+.mn-PostNavigation {
+  // In case elements are stacked in mobile mode.
+  > * {
+    margin-bottom: .5rem;
+  }
+}

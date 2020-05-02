@@ -1,41 +1,9 @@
-<footer>
-  {% if paginator.total_pages > 1 %}
-    <nav>
-      <a
-        {% if paginator.previous_page %}
-          class="ghost"
-          href="{{ paginator.previous_page_path | prepend: site.baseurl }}"
-        {% else %}
-          class="disabled"
-        {% endif %}
-      >
-        « newer posts
-      </a>
-      <span class="paginate">page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-      <a
-        {% if paginator.next_page %}
-          class="ghost"
-          href="{{ paginator.next_page_path | prepend: site.baseurl }}"
-        {% else %}
-          class="disabled"
-        {% endif %}
-      >
-        older posts »
-      </a>
-    </nav>
-  {% elsif page.previous.url or page.next.url %}
-    <nav>
-      {% if page.next.url %}
-        <a href="{{ page.next.url | prepend: site.baseurl }}">« {{ page.next.title }}</a>
-      {% endif %}
-      {% if page.previous.url %}
-        <a href="{{ page.previous.url | prepend: site.baseurl }}">{{ page.previous.title }} »</a>
-      {% endif %}
-    </nav>
-  {% endif %}
-  <p>
-    &copy;
-    <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>.
-    {{ site.author.name }}
-  </p>
+<footer class="mn-AppFooter">
+  <div class="container mn-AppFooter-container">
+    <p>
+      &copy;
+      <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>.
+      {{ site.author.name }}
+    </p>
+  </div>
 </footer>

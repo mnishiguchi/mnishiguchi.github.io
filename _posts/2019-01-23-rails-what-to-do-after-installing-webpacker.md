@@ -9,6 +9,8 @@ comments: true
 ---
 This is my note on how I should set up [webpacker](https://github.com/rails/webpacker).
 
+
+
 ## My Goals
 
 #### general
@@ -65,7 +67,7 @@ This is my note on how I should set up [webpacker](https://github.com/rails/webp
 }
 ```
 
-## Set up webpacker load path 
+## Set up webpacker load path
 
 #### config/webpacker.yml
 

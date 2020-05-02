@@ -1,22 +1,24 @@
-<header>
-  <h1>
-    {% include logo.html %}
-    <a href="{{ site.baseurl }}">{{ site.title }}</a>
-  </h1>
-  <nav>
-    <div>
-      {% for each in site.navigation_links %}
+<header class="mn-AppHeader">
+  <div class="container mn-AppHeader-container">
+    <h1>
+      {% include logo.html %}
+      <a href="{{ site.baseurl }}">{{ site.title }}</a>
+    </h1>
+    <nav>
+      <div>
+        {% for each in site.navigation_links %}
         {% if each[1] == page.url %}
-          <a class="nav-item active">{{ each[0] }}</a>
+        <a class="nav-item active">{{ each[0] }}</a>
         {% else %}
-          <a class="nav-item" href="{{ each[1] | prepend: site.baseurl }}">{{ each[0] }}</a>
+        <a class="nav-item" href="{{ each[1] | prepend: site.baseurl }}">{{ each[0] }}</a>
         {% endif %}
-      {% endfor %}
-    </div>
-    <div>
-      {% for each in site.social_links %}
+        {% endfor %}
+      </div>
+      <div>
+        {% for each in site.social_links %}
         <a href="{{ each[1] }}"><i class="fa fa-{{ each[0] }}"></i></a>
-      {% endfor %}
-    </div>
-  </nav>
+        {% endfor %}
+      </div>
+    </nav>
+  </div>
 </header>

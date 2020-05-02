@@ -1,6 +1,6 @@
 ---
 title: Home
-layout: default
+layout: application
 ---
 
 {% for page in paginator.posts %}
@@ -18,3 +18,5 @@ layout: default
     {% endunless %}
   </article>
 {% endfor %}
+
+{% include post_pagination.html %}
