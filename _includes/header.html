@@ -1,24 +1,13 @@
 <header class="mn-AppHeader">
   <div class="container mn-AppHeader-container">
     <h1>
-      {% include logo.html %}
-      <a href="{{ site.baseurl }}">{{ site.title }}</a>
+      {{ site.title }}
     </h1>
-    <nav>
-      <div>
-        {% for each in site.navigation_links %}
-        {% if each[1] == page.url %}
-        <a class="nav-item active">{{ each[0] }}</a>
-        {% else %}
-        <a class="nav-item" href="{{ each[1] }}">{{ each[0] }}</a>
-        {% endif %}
-        {% endfor %}
-      </div>
-      <div>
-        {% for each in site.social_links %}
-        <a href="{{ each[1] }}"><i class="fa fa-{{ each[0] }}"></i></a>
-        {% endfor %}
-      </div>
+    <nav class="d-flex ">
+      {% for each in site.icon_links %}
+      <a class="nav-link {% if each[1] == page.url %} active {% endif %}" href="{{ each[1] }}"
+        style="font-size: 1.5rem;"><i class="fa fa-{{ each[0] }}"></i></a>
+      {% endfor %}
     </nav>
   </div>
 </header>

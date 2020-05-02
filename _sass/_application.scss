@@ -4,7 +4,7 @@ body {
 }
 
 main {
-  min-height: 80vh;
+  min-height: 0vh;
 }
 
 .mn-AppHeader {
@@ -13,7 +13,7 @@ main {
 
   &-container {
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: .5rem;
   }
 
   * {
@@ -26,8 +26,8 @@ main {
   margin-top: 2rem;
 
   &-container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   * {

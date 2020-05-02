@@ -23,10 +23,10 @@ exclude:
 plugins:
   - jekyll-gist
   - jekyll-seo-tag
-navigation_links:
-  - [Home, /]
-  - [Posts, /posts]
-social_links:
+# https://fontawesome.com/v4.7.0/icons/
+icon_links:
+  - [home, /]
+  - [sticky-note, /posts]
   - [github, "https://github.com/mnishiguchi"]
   - [linkedin, "https://linkedin.com/in/mnishiguchi"]
   - [stack-overflow, "https://stackoverflow.com/users/3837223/mnishiguchi"]
