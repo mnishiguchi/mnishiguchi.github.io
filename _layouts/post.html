@@ -10,7 +10,22 @@ comments: true
 
 {% if page.comments %}
   <aside class="comments">
-    {% include comments.html %}
+    <div id="disqus_thread"></div>
+    <script>
+      // https://disqus.com/admin/universalcode/
+      document.addEventListener("DOMContentLoaded", function () {
+        var disqus_config = function () {
+          this.page.url = "{{ site.url }}";  // Canonical URL
+          this.page.identifier = "{{ page.url }}"; // Page unique ID
+        };
+        (function () { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = '//mnishiguchi.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      });
+    </script>
   </aside>
 {% endif %}
 
