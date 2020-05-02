@@ -4,19 +4,19 @@ layout: page
 permalink: /posts # permalink must be specified because this file is not in the root
 ---
 
-<div class="posts" id="posts">
-  <input class="search" placeholder="Search for posts" />
+<div class="js-PostSearch" id="js-PostSearch">
+  <input class="search form-control" placeholder="Search for posts" />
 
-  <div class="list post_list">
+  <ul class="list list-group my-3">
     {% for post in site.posts %}
-      <div>
-        <h4 class="js_post_title post_list__post_title">
+      <li class="list-group-item">
+        <h4 class="js-PostSearch-title">
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h4>
-        <div class="js_post_tags">
+        <div class="js-PostSearch-tags">
           {% include post_tags.html %}
         </div>
-      </div>
+      </li>
     {% endfor %}
-  </div>
+  </ul>
 </div>

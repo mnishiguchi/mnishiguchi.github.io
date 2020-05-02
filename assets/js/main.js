@@ -1,6 +1,7 @@
+// https://listjs.com/
 (function initList() {
-  window.postList = new List("posts", {
-    valueNames: ["js_post_title", "js_post_tags"],
+  window.postList = new List("js-PostSearch", {
+    valueNames: ["js-PostSearch-title", "js-PostSearch-tags"],
   });
 })();
 
