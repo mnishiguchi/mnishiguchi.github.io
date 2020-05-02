@@ -13,8 +13,13 @@ include:
   - _pages
   - _redirects
 exclude:
-  - node_modules
   - admin/index.js
+  - bin
+  - LICENSE.txt
+  - node_modules
+  - package.json
+  - README.md
+  - yarn.lock
 plugins:
   - jekyll-gist
   - jekyll-paginate

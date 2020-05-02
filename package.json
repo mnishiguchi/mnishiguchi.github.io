@@ -4,7 +4,7 @@
   "scripts": {
     "develop": "jekyll clean && jekyll serve --watch",
     "build": "JEKYLL_ENV=production jekyll clean && jekyll build",
-    "cp-bootstrap-scss": "mkdir -p ./_sass/bootstrap && cp -r ./node_modules/bootstrap/scss/ ./_sass/bootstrap/"
+    "cp_bootstrap": "zsh bin/cp_bootstrap.sh"
   },
   "dependencies": {
     "bootstrap": "^4.4.1"
