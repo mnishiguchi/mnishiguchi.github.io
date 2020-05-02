@@ -1,23 +1,11 @@
 $theme_color: #082031;
 $link_color: #75a2d1;
 
-html {
-  background-color: $theme_color;
-}
-
 body {
-  font-family: "Source Sans Pro";
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
   font-size: calc(.6vw + .8em);
-  margin: 0;
   min-height: 100vh;
-  color: $theme_color;
-  background: white;
 }
 
 a {

@@ -22,3 +22,7 @@ _site
 node_modules
 .netlify
 .jekyll-cache
+.jekyll-metadata
+
+# Vendor assets
+_sass/bootstrap

@@ -1,9 +1,15 @@
 ---
-# Use a comment to ensure Jekyll reads the file to be transformed into CSS later
-# only main files contain this front matter, not partials.
 sitemap: false
 ---
 
-@import 'base';
-@import 'highlight';
-@import 'logo';
+// Start a front matter, to ensure Jekyll reads the file to be transformed into
+// CSS later only main files contain this front matter, not partials.
+// https://jekyllrb.com/docs/assets
+
+// Place all your partials in your sass_dir, which defaults to <source>/_sass.
+// https://jekyllrb.com/docs/assets/#sassscss
+@import "base";
+@import "highlight";
+@import "logo";
+@import "variables";
+@import "bootstrap/bootstrap";
