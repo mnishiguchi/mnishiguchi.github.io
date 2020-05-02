@@ -9,13 +9,13 @@ comments: true
 </article>
 
 {% if page.comments %}
-  <aside class="comments">
+  <aside class="my-4 comments">
     <div id="disqus_thread"></div>
   </aside>
 {% endif %}
 
 {% if site.related_posts != empty %}
-  <aside class="related">
+  <aside class="my-4 related">
     <h2>Related posts</h2>
     {% include related_posts.html posts=site.related_posts limit=6 %}
   </aside>

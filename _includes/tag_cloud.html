@@ -36,11 +36,11 @@ Sort by count
 
 {% assign sorted_by_count = tmp_array %}
 
-<div class="tag_cloud">
+<div>
   {% for tag_name_with_count in sorted_by_count %}
     {% assign tmp = tag_name_with_count | strip | split: " (" %}
     {% assign tag_name_only = tmp[0] %}
-    <a class="tag_cloud__tag" href="{{ baseurl }}/tags#{{ tag_name_only | slugize }}">
+    <a class="btn btn-light my-1" href="/tags#{{ tag_name_only | slugize }}">
       {{ tag_name_with_count }}
     </a>
   {% endfor %}

@@ -5,5 +5,5 @@
 {% endif %}
 
 {% for tag_name in tags %}
-  <a class="post_tag" href="{{ site.baseurl }}/tags#{{ tag_name | slugize }}">{{ tag_name }}</a>
+  <a class="badge badge-secondary" href="/tags#{{ tag_name | slugize }}">{{ tag_name }}</a>
 {% endfor %}
