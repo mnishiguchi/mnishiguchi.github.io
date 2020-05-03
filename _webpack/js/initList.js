@@ -1,3 +1,5 @@
+import List from 'list.js';
+
 // https://listjs.com/
 export default function initList() {
   document.addEventListener('turbolinks:load', function () {

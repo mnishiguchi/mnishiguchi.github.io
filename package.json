@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "develop": "bundle exec foreman start -f Procfile.dev",
-    "build": "JEKYLL_ENV=production jekyll clean && webpack --mode production && jekyll build",
+    "build": "JEKYLL_ENV=production jekyll clean && yarn run format && webpack --mode production && jekyll build",
     "webpack-build": "webpack --mode production",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\""
   },
@@ -16,6 +16,7 @@
     "css-loader": "^3.5.3",
     "cssnano": "^4.1.10",
     "file-loader": "^6.0.0",
+    "list.js": "^1.5.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
