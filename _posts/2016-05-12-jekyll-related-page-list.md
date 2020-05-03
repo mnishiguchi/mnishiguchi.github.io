@@ -54,7 +54,7 @@ page.title %} {% assign posts_list = posts_list | push: each_post %} {% endif %}
 <ul class="related-posts">
   {% for post in posts_list limit:include.limit %}
   <li>
-    <a href="{{ post.url | prepend: site.baseurl }}">
+    <a href="{{ post.url | absolute_url }}">
       {{ post.title }}
     </a>
     <br />

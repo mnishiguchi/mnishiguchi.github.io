@@ -61,7 +61,7 @@ else %} {% assign date = page.date %} {% assign tags = page.tags %} {% endif %}
     Display all the tag names that link to a corresponding section of the Tags page.
     -->
     {% for tag in tags %}
-    <a href="{{ site.baseurl }}/tags#{{ tag | slugize }}">{{ tag }}</a>
+    <a href="{{ site.url }}/tags#{{ tag | slugize }}">{{ tag }}</a>
     {% endfor %}
   </div>
 </span>
@@ -104,7 +104,7 @@ Display tags.
 <ul class="tag-cloud">
   {% for tag_name in tag_names %}
   <li>
-    <a href="{{ baseurl }}/tags#{{ tag_name | slugize }}">
+    <a href="{{ site.url }}/tags#{{ tag_name | slugize }}">
       {{ tag_name }}
     </a>
   </li>
@@ -124,7 +124,7 @@ List post titles under each tag.
     </h3>
 
     {% for post in site.tags[tag_name] %}
-    <a href="{{ post.url | prepend: baseurl }}">
+    <a href="{{ post.url | absolute_url }}">
       {{ post.title }}
     </a>
     {% endfor %}

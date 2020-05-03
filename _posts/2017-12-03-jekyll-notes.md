@@ -29,7 +29,7 @@ This is my notes on what I learned about Jekyll through my own blog site.
 ## Links to Assets
 
 ```html
-<link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
+<link rel="stylesheet" href="{{ site.url }}/styles.css" />
 ```
 
 ## Pagination

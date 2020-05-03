@@ -6,7 +6,7 @@
     {% if include.disable_link %}
       {{ page.title }}
     {% else %}
-      <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+      <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
     {% endif %}
   </h1>
 </header>

@@ -11,7 +11,7 @@ permalink: /posts # permalink must be specified because this file is not in the 
     {% for post in site.posts %}
       <li class="list-group-item">
         <h4 class="js-PostSearch-title">
-          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
         </h4>
         <div class="js-PostSearch-tags">
           {% include post_tags.html %}

@@ -8,7 +8,7 @@ sitemap: false
 
  <title>{{ site.title }}</title>
  <link href="{{ '/atom.xml' | absolute_url }}" rel="self"/>
- <link href="/"/>
+ <link href="{{ site.url | absolute_url }}"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>{{ site.url }}</id>
  <author>
@@ -20,7 +20,7 @@ sitemap: false
    <title>{{ post.title | xml_escape }}</title>
    <link href="{{ post.url | absolute_url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>{{ site.url }}{{ post.id }}</id>
+   <id>{{ site.url | absolute_url }}{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
