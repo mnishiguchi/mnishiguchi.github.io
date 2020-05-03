@@ -24,5 +24,5 @@ node_modules
 .jekyll-cache
 .jekyll-metadata
 
-# Vendor assets
-_sass/bootstrap
+# Webpack output
+assets/main-bundle.*
