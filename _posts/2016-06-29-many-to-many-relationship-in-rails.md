@@ -3,20 +3,17 @@ layout: post
 title: Many-to-many relationship in Rails
 comments: true
 tags:
-- rails
-- postgresql
-- active_record
-- database
-
+  - rails
+  - postgresql
+  - active_record
+  - database
 ---
 
-This is my memo on *{{ page.title }}*.
+This is my memo on _{{ page.title }}_.
 Adding a `many to many` relationship between the following two models.
 
 - `User`
 - `Song`
-
- 
 
 #### Create a migration file to create a join table.
 
@@ -76,7 +73,7 @@ class Song < ActiveRecord::Base
 
 ## References
 
-- [Rails4のhas_many throughで多対多のリレーションを実装する](http://qiita.com/samurairunner/items/cbd91bb9e3f8b0433b99) by @samurairunner
+- [Rails4 の has_many through で多対多のリレーションを実装する](http://qiita.com/samurairunner/items/cbd91bb9e3f8b0433b99) by @samurairunner
 - http://stackoverflow.com/questions/10301794/difference-between-rake-dbmigrate-dbreset-and-dbschemaload
 - [ga-wdi-lessons/rails-many-to-many](https://github.com/ga-wdi-lessons/rails-many-to-many)
-- [Rails - has_many & belongs_to関係を既存のモデルに追加](http://qiita.com/mnishiguchi/items/35e40ab46ef02d095ce0)
+- [Rails - has_many & belongs_to 関係を既存のモデルに追加](http://qiita.com/mnishiguchi/items/35e40ab46ef02d095ce0)

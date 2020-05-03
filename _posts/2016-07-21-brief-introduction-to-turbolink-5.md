@@ -15,6 +15,7 @@ As it turned out, it was not bad. It was a great experience. It is awesome that 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Reference
-+ [https://github.com/turbolinks/turbolinks](https://github.com/turbolinks/turbolinks)
-+ [http://confreaks.tv/videos/railsconf2016-turbolinks-5-i-can-t-believe-it-s-not-native](http://confreaks.tv/videos/railsconf2016-turbolinks-5-i-can-t-believe-it-s-not-native)
-+ [https://thoughtbot.com/upcase/videos/turbolinks](https://thoughtbot.com/upcase/videos/turbolinks)
+
+- [https://github.com/turbolinks/turbolinks](https://github.com/turbolinks/turbolinks)
+- [http://confreaks.tv/videos/railsconf2016-turbolinks-5-i-can-t-believe-it-s-not-native](http://confreaks.tv/videos/railsconf2016-turbolinks-5-i-can-t-believe-it-s-not-native)
+- [https://thoughtbot.com/upcase/videos/turbolinks](https://thoughtbot.com/upcase/videos/turbolinks)

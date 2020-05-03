@@ -8,8 +8,8 @@ tags:
   - search
 comments: true
 ---
-This is my note on how to set up PostgreSQL Trigram Search, which is so powerful that it enables me to find records even by misspelled word.
 
+This is my note on how to set up PostgreSQL Trigram Search, which is so powerful that it enables me to find records even by misspelled word.
 
 - https://github.com/Casecommons/pg_search#trigram-trigram-search
 - https://www.postgresql.org/docs/current/pgtrgm.html

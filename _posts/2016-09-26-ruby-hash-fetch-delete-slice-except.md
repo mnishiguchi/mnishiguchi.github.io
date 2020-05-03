@@ -3,11 +3,9 @@ layout: post
 title: Ruby Hash#fetch, Hash#delete, Hash#slice, Hash#except
 comments: true
 tags:
-- ruby
-- rails
+  - ruby
+  - rails
 ---
-
-
 
 ## Hash#slice vs Hash#except
 

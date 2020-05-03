@@ -3,12 +3,10 @@ layout: post
 title: Rake tasks basics
 comments: true
 tags:
-- ruby
-- rake
-- rails
+  - ruby
+  - rake
+  - rails
 ---
-
-
 
 ## Basic commands
 
@@ -115,5 +113,6 @@ Hello, Mr. Nishiguchi!
 ---
 
 ## Resources
+
 - [https://github.com/ruby/rake](https://github.com/ruby/rake)
 - [RailsConf 2016 - Crushing It With Rake Tasks By Barrett Clark](https://youtu.be/8HRJQUr2Y3Q)

@@ -3,14 +3,14 @@ layout: post
 title: Creating a new Rails app
 comments: true
 tags:
-- rails
-- postgresql
+  - rails
+  - postgresql
 ---
 
-This is my memo on *{{ page.title }}*.
-
+This is my memo on _{{ page.title }}_.
 
 #### Before getting started
+
 ```bash
 $ ruby -v       # Ensure that Ruby is installed.
 $ rails -v      # Ensure that Rails is installed.
@@ -18,6 +18,7 @@ $ git --version # Ensure that git is installed.
 ```
 
 #### Generate a new app (with PostgreSQL)
+
 ```bash
 $ cd ~/workspace
 $ rails new <app_name> -d postgresql
@@ -47,12 +48,15 @@ $ bundle update
 ```
 
 #### Set config/database.yml (if needed)
+
 - Username: By default, the same as your OS X user account.
 
 #### Create the database
+
 - `$ [bundle exec] rake db:create`
 
 #### Check if it works on local server
+
 - `$ rails server`
 - Visit [http://localhost:3000/](http://localhost:3000/)
 
@@ -67,6 +71,7 @@ $ bundle update
 ## Misc techniques
 
 ### Check currently installed Rails gems
+
 - `$ gem list rails`
 
 #### Undoing generate

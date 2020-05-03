@@ -7,9 +7,8 @@ tags:
   - webpacker
 comments: true
 ---
+
 This is my note on how I should set up [webpacker](https://github.com/rails/webpacker).
-
-
 
 ## My Goals
 
@@ -72,7 +71,7 @@ This is my note on how I should set up [webpacker](https://github.com/rails/webp
 #### config/webpacker.yml
 
 ```yml
-  resolved_paths: ['app/assets']
+resolved_paths: ['app/assets']
 ```
 
 ## Set up outputs in `app/views/layouts/application.slim`
@@ -132,7 +131,7 @@ app/assets/
 
 - `app/javascript/packs/application.js` is the entry point
 - `application.js` and `application.css` wil be automatically generated after the compiling based on all the module imported into `app/javascript/packs/application.js`
-- The packs folder is only made for webpack entries. The files that are to be imported into the entry  must be outside the packs folder.
+- The packs folder is only made for webpack entries. The files that are to be imported into the entry must be outside the packs folder.
   - https://github.com/rails/webpacker/issues/1432#issuecomment-382159016
 
 ```bash
@@ -196,7 +195,7 @@ console.log('Webpacker initialized');
 
 ## CSS modules
 
-- TL;DR: Make sure that filename is "*.module.*"
+- TL;DR: Make sure that filename is "_.module._"
 
 ```scss
 // app/javascript/components/ReactApp/TopNav.module.scss

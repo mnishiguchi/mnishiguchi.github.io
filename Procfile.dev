@@ -1,0 +1,2 @@
+jekyll: bundle exec jekyll clean && jekyll serve --watch
+webpack: webpack --watch

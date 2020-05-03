@@ -3,12 +3,10 @@ layout: post
 title: Undoing things in Rails
 comments: true
 tags:
-- rails
+  - rails
 ---
 
-This is my memo on *{{ page.title }}*.
-
- 
+This is my memo on _{{ page.title }}_.
 
 ## Undo generate
 
@@ -33,13 +31,11 @@ $ [bundle exec] rake db:rollback
 $ [bundle exec] rake db:migrate VERSION=0
 ```
 
-
 ## Reset database in development
 
 ```bash
 rake db:drop && rake db:create && rake db:migrate && rake db:seed
 ```
-
 
 ## Reset database in production (Heroku)
 
@@ -47,7 +43,7 @@ rake db:drop && rake db:create && rake db:migrate && rake db:seed
 $ heroku pg:reset DATABASE
 ```
 
-
 ## Reference
+
 - [RUBY ON RAILS TUTORIAL (3RD ED.)](https://www.railstutorial.org/book/static_pages#sidebar-undoing_things)
 - [The Rails Command Line](http://guides.rubyonrails.org/command_line.html)

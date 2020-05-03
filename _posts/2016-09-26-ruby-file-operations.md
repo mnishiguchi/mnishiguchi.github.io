@@ -3,12 +3,10 @@ layout: post
 title: Ruby file operations
 comments: true
 tags:
-- ruby
-- file
-- rails
+  - ruby
+  - file
+  - rails
 ---
-
-
 
 ## Currently working directory
 
@@ -53,14 +51,15 @@ end
 #### Reading each line
 
 ```rb
-File.open("example.rb", "r") do |io|  
+File.open("example.rb", "r") do |io|
   io.each_line do |line|
     puts line
   end
-end  
+end
 ```
 
 #### Reading from URL
+
 - https://ruby-doc.org/stdlib-2.1.0/libdoc/open-uri/rdoc/OpenURI.html
 
 ```rb
@@ -69,6 +68,7 @@ puts open("https://mnishiguchi.com").read
 ```
 
 #### Reading JSON
+
 - [Stackoverflow: Unable to parse JSON because of invisible characters](http://stackoverflow.com/a/26399045/3837223)
 
 ```rb
@@ -77,6 +77,7 @@ JSON.parse(data.encode("ASCII", { undef: :replace, replace: "" }))
 ```
 
 ## Write
+
 - http://qiita.com/mayahiro/items/eba22d312f31331fead3#comment-0440fe2c41e85526e37f
 
 ```rb
@@ -90,5 +91,6 @@ File.write "data_file.yml", data
 ```
 
 ## Links and References
+
 - http://ruby.bastardsbook.com/chapters/io/
 - https://stackoverflow.com/questions/5545068/what-are-all-the-common-ways-to-read-a-file-in-ruby

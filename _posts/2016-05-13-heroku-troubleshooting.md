@@ -3,26 +3,27 @@ layout: post
 title: Heroku troubleshooting
 comments: true
 tags:
-- heroku
-- rails
+  - heroku
+  - rails
 ---
 
 Everytime I get an error from Heroku, it is typically time-consuming to troubleshoot without any resources at hand.
 So I decide to write up my past Heroku troubleshooting experiences for my future self.
 
- 
-
 ## Before starting
+
 - Relax, do not panic
 - Read error messages thoroughly
 - What changes did you make since there was no error.
 
 ## Diagnosing errors at Heroku
+
 - `$ heroku logs`
 - `$ heroku run rails console`
 - `$ heroku run console --sandbox`
 
 ## Some possible causes
+
 - Some code got broken when refactoring.
 - ActiveRecord associations are not properly handled.
 - The database schema is not updated.
@@ -62,6 +63,7 @@ $ git push heroku master
 ```
 
 ### Error: Heroku deployment error H10 (App crashed)
+
 - Didn’t you modify db or something?
 - Most likely something is broken in your code (association etc).
 
@@ -73,6 +75,7 @@ $ heroku pg:reset DATABASE   # reset the production database
 ```
 
 ### [Missing CSS on Heroku Deployment](https://teamtreehouse.com/forum/missing-css-on-heroku-deployment)
+
 - [Rails Asset Pipeline on Heroku Cedar](https://devcenter.heroku.com/articles/rails-asset-pipeline)
 - `$ RAILS_ENV=production bundle exec rake assets:precompile`
 
@@ -85,6 +88,7 @@ $ git remote add heroku git@heroku.com:APP_NAME.git
 ```
 
 ### js files not loading in production but working well locally
+
 - Require all the necessary script files in `app/assets/javascripts/application.js`
 - Precompile the assets for production
 
@@ -95,9 +99,11 @@ $ RAILS_ENV=production bundle exec rake assets:precompile
 ```
 
 ### [Check Heroku-supported Ruby/Rails versions](https://devcenter.heroku.com/articles/ruby-support#ruby-versions)
+
 `An error occurred while installing Ruby ruby-x.y.z`
 
 ### Check if Sendgrid is configured (if applicable)
+
 - [Configuring Rails to use SendGrid in production](https://www.railstutorial.org/book/account_activation_password_reset#code-sendgrid_config)
 
 ```bash
@@ -135,6 +141,7 @@ $ rake tmp:cache:clear
 ---
 
 ## Reference
+
 - [RUBY ON RAILS TUTORIAL (3ND ED.)](https://www.railstutorial.org/book/beginning#sec-deploying)
 - [Deploying with Git](https://devcenter.heroku.com/articles/git)
 - [Heroku - メモ](http://qiita.com/mnishiguchi/items/6045add62ff7fd8928bc)

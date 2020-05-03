@@ -3,14 +3,12 @@ layout: post
 title: Rails hash camelize and underscore keys
 comments: true
 tags:
-- ruby
-- rails
-- hash
-- json
-- api
+  - ruby
+  - rails
+  - hash
+  - json
+  - api
 ---
-
-
 
 ## Camelize hash keys before converting hash to json
 
@@ -21,6 +19,7 @@ hash.deep_transform_keys! { |key| key.camelize(:lower) }
 ```
 
 #### In jbuilder
+
 - Automatically camelize the keys of any outgoing jsons.
 - https://stackoverflow.com/questions/37569439/automatically-convert-hash-keys-to-camelcase-in-jbuilder
 
@@ -38,6 +37,7 @@ hash.deep_transform_keys! { |key| key.underscore }
 ```
 
 #### B: In middleware
+
 - Automatically snakecase the keys of any incoming params.
 
 ```rb
@@ -65,6 +65,7 @@ end
 ```
 
 ## Links and References
+
 - https://stackoverflow.com/questions/37569439/automatically-convert-hash-keys-to-camelcase-in-jbuilder
 - https://apidock.com/rails/Hash/transform_keys
 - https://apidock.com/rails/Hash/deep_transform_keys

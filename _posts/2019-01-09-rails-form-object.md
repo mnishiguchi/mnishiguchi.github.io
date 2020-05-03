@@ -7,8 +7,8 @@ tags:
   - form
 comments: true
 ---
-This is my note on how to implement a simple contact form using a form object.
 
+This is my note on how to implement a simple contact form using a form object.
 
 ## dependencies
 
@@ -105,7 +105,6 @@ end
       = f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary"
 ```
 
-
 ## links
-- https://robots.thoughtbot.com/activemodel-form-objects
 
+- https://robots.thoughtbot.com/activemodel-form-objects

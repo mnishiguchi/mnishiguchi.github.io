@@ -6,8 +6,8 @@ tags:
   - date
 comments: true
 ---
-I wanted to make a simple ruby object that represents date range.
 
+I wanted to make a simple ruby object that represents date range.
 
 ```rb
 class DateRange < Range

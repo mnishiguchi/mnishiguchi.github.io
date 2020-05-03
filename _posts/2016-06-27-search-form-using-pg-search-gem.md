@@ -3,21 +3,19 @@ layout: post
 title: Search form using pg_search gem
 comments: true
 tags:
-- rails
-- postgresql
-- database
-
+  - rails
+  - postgresql
+  - database
 ---
 
-This is my memo on *{{ page.title }}*.
-
- 
+This is my memo on _{{ page.title }}_.
 
 # Implementing search using pg_search gem
 
 ![Screenshot 2015-07-18 21.51.47.png](https://qiita-image-store.s3.amazonaws.com/0/82804/1ce907d4-6210-9db0-c5b2-248bfdf587be.png)
 
 ## Environment
+
 - Ruby
 - Rails
 - PostgreSQL
@@ -35,6 +33,7 @@ gem 'pg_search',   '~> 1.0.3'   # Named scopes that take advantage of PostgreSQL
 ## Get started
 
 #### Model
+
 - Add `include PgSearch` to use `pg_search` gem.
 - Define `pg_search_scope` When `search` method is called, searching will be performed based on the scope that is defined here.
 
@@ -68,6 +67,7 @@ end
 ```
 
 #### View
+
 - Create a search form.
 - Issue a GET#index request with the user's input as a search term.
 

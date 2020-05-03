@@ -3,11 +3,8 @@ layout: post
 title: Caching in rails 5
 comments: true
 tags:
-- rails
-
+  - rails
 ---
-
-
 
 #### Enabling/disabling caching in development environment
 
@@ -26,11 +23,8 @@ Development mode is no longer being cached.
 #### Fragment Caching
 
 ```html
-<% @products.each do |product| %>
-  <% cache product do %>
-    <%= render product %>
-  <% end %>
-<% end %>
+<% @products.each do |product| %> <% cache product do %> <%= render product %>
+<% end %> <% end %>
 ```
 
 ```html

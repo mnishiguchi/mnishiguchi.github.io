@@ -3,15 +3,13 @@ layout: post
 title: Simple custom grid system
 comments: true
 tags:
-- css
+  - css
 ---
 
-This is my memo on *{{ page.title }}*.
+This is my memo on _{{ page.title }}_.
 I just wanted to create a simple reusable CSS grid system without using Bootstrap. Using Flexbox, I was able to accomplish it quite easily.
 
 NOTE: The code is not tested.
-
- 
 
 ### Stylesheet
 
@@ -30,7 +28,11 @@ This example is written in [SCSS](http://sass-lang.com/).
 }
 // Basic configuration of columns.
 .col {
-  h1, h2, h3, h4, p {
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
     // Add ellipsis in case of text overflowing.
     width: 100%;
     overflow: hidden;
@@ -42,21 +44,39 @@ This example is written in [SCSS](http://sass-lang.com/).
   }
 }
 // Columns in various widths.
-.col.col-1-3 { @include column(100% / 3 * 1); }
-.col.col-2-3 { @include column(100% / 3 * 2); }
-.col.col-1-4 { @include column(100% / 4 * 1); }
-.col.col-2-4 { @include column(100% / 4 * 2); }
-.col.col-3-4 { @include column(100% / 4 * 3); }
-.col.col-1-5 { @include column(100% / 5 * 1); }
-.col.col-2-5 { @include column(100% / 5 * 2); }
-.col.col-3-5 { @include column(100% / 5 * 3); }
-.col.col-4-5 { @include column(100% / 5 * 4); }
+.col.col-1-3 {
+  @include column(100% / 3 * 1);
+}
+.col.col-2-3 {
+  @include column(100% / 3 * 2);
+}
+.col.col-1-4 {
+  @include column(100% / 4 * 1);
+}
+.col.col-2-4 {
+  @include column(100% / 4 * 2);
+}
+.col.col-3-4 {
+  @include column(100% / 4 * 3);
+}
+.col.col-1-5 {
+  @include column(100% / 5 * 1);
+}
+.col.col-2-5 {
+  @include column(100% / 5 * 2);
+}
+.col.col-3-5 {
+  @include column(100% / 5 * 3);
+}
+.col.col-4-5 {
+  @include column(100% / 5 * 4);
+}
 
 // For smaller devices, stretch all the columns to 100%.
 @media (max-width: 768px) {
   .col {
-    flex: 0 0 100%!important;
-    max-width: 100%!important; /* IE11 */
+    flex: 0 0 100% !important;
+    max-width: 100% !important; /* IE11 */
   }
 }
 ```
@@ -69,7 +89,7 @@ This example is written with Rails and the [Slim template engine](http://slim-la
 - An element with `.offset` is a dummy spacer used for offsetting a column.
 
 ```slim
-.row  
+.row
   .col.col-1-3
     .user-info
       h1
@@ -95,4 +115,5 @@ This example is written with Rails and the [Slim template engine](http://slim-la
 ```
 
 ## Reference
-- [脱Bootstrapガイド 〜フルスクラッチCSS〜](http://qiita.com/hashrock/items/5c18bf5086f52e4122e5)
+
+- [脱 Bootstrap ガイド 〜フルスクラッチ CSS〜](http://qiita.com/hashrock/items/5c18bf5086f52e4122e5)

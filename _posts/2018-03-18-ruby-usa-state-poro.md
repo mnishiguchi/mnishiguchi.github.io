@@ -9,8 +9,6 @@ comments: true
 
 A simple PORO that represents a USA state.
 
-
-
 ```rb
 class UsState
   attr_reader :name, :abbreviation

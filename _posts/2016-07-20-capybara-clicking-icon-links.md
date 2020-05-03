@@ -3,11 +3,9 @@ layout: post
 title: Capybara - clicking icon links
 comments: true
 tags:
-- rspec
-- capybara
+  - rspec
+  - capybara
 ---
-
-
 
 ```html
 <div class="col-sm-4 align-center">

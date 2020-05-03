@@ -3,21 +3,18 @@ layout: post
 title: Autocomplete form in Rails
 comments: true
 tags:
-- rails
-- jquery
-- form
-- json
-
+  - rails
+  - jquery
+  - form
+  - json
 ---
 
-This is my memo on *{{ page.title }}*.
-
- 
+This is my memo on _{{ page.title }}_.
 
 ## I want to:
+
 - display a dropdown list of suggestions every time user enters a character into a text field.
 - automatically fill an appropriate value in another field when an item in the dropdown list is clicked.
-
 
 ## Dependencies
 
@@ -25,7 +22,6 @@ This is my memo on *{{ page.title }}*.
 - Rails 5.0.0.rc2
 - jquery-rails
 - jquery-ui-rails
-
 
 ## View
 
@@ -41,7 +37,6 @@ This is my memo on *{{ page.title }}*.
   .form-group
     = f.submit "Create item", class: 'btn btn-primary'
 ```
-
 
 ## Data
 
@@ -69,7 +64,6 @@ module HouseholdItemsHelper
 end
 ```
 
-
 ## Controller
 
 Make the helper module available in the view.
@@ -82,7 +76,6 @@ class HouseholdItemsController < ApplicationController
 
   ...
 ```
-
 
 ## JS / jQuery
 
@@ -114,7 +107,6 @@ $(document).ready(function(){
 });
 ```
 
-
 ## Styles
 
 ```scss
@@ -126,8 +118,8 @@ ul.ui-autocomplete {
   border: solid 1px #999;
   cursor: default;
   li {
-    background-color: #FFF;
-    border-top: solid 1px #DDD;
+    background-color: #fff;
+    border-top: solid 1px #ddd;
     margin: 0;
     padding: 2px 15px;
     a {
@@ -135,17 +127,17 @@ ul.ui-autocomplete {
       display: block;
       padding: 3px;
     }
-    a.ui-state-hover, a.ui-state-active {
-      background-color: #FFFCB2;
+    a.ui-state-hover,
+    a.ui-state-active {
+      background-color: #fffcb2;
     }
   }
 }
 ```
 
-
 ## References
 
-- [Rails, jQuery-ui, Autocompleteで語句候補ドロップダウン](http://qiita.com/mnishiguchi/items/c3aab56e089071ac8d5c)
+- [Rails, jQuery-ui, Autocomplete で語句候補ドロップダウン](http://qiita.com/mnishiguchi/items/c3aab56e089071ac8d5c)
 - [https://github.com/railscasts/102-auto-complete-association-revised](https://github.com/railscasts/102-auto-complete-association-revised)
 - [https://github.com/joliss/jquery-ui-rails](https://github.com/joliss/jquery-ui-rails)
 - [https://jqueryui.com/autocomplete/](https://jqueryui.com/autocomplete/)

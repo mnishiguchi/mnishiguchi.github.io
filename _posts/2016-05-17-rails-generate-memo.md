@@ -3,12 +3,10 @@ layout: post
 title: Rails generate memo
 comments: true
 tags:
-- rails
+  - rails
 ---
 
-*{{ page.title }}*.
-
- 
+_{{ page.title }}_.
 
 ## [rails generate](http://guides.rubyonrails.org/command_line.html#rails-generate)
 
@@ -46,9 +44,10 @@ $ rails generate migration add_index_to_users_email
 ```
 
 #### The resource generator
+
 - Stubs out a new resource including:
-  + an empty model
-  + controller suitable for a restful, resource-oriented application
+  - an empty model
+  - controller suitable for a restful, resource-oriented application
 
 ```bash
 # Usage: `rails generate resource NAME [field[:type][:index] field[:type][:index]] [options]`
@@ -58,12 +57,13 @@ $ rails generate resource post title:string body:text published:boolean
 ```
 
 #### The scaffold generator
+
 - Generates a full set of:
-  + model
-  + database migration for that model
-  + controller to manipulate it
-  + views to view and manipulate the data
-  + a test suite for each of the above
+  - model
+  - database migration for that model
+  - controller to manipulate it
+  - views to view and manipulate the data
+  - a test suite for each of the above
 
 ```bash
 # Usage: `rails generate scaffold NAME [field[:type][:index] field[:type][:index]] [options]`
@@ -73,5 +73,6 @@ $ rails generate scaffold post title body:text published:boolean
 ```
 
 ## Reference
+
 - [rails generate](http://guides.rubyonrails.org/command_line.html#rails-generate)
 - [RAILS: GENERATE MODEL VS. RESOURCE VS. SCAFFOLD](http://www.korenlc.com/rails-generate-model-vs-resourse-vs-scaffold/)

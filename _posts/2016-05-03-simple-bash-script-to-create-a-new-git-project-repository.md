@@ -3,13 +3,12 @@ layout: post
 title: Simple bash script to create a new git project repository
 comments: true
 tags:
-- shell
-- git
-- unix
+  - shell
+  - git
+  - unix
 ---
 
 When I was learning basics on Linux operating system following Linux Foundation's [online lectures](https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-0) a few month ago, I created a simple bash script that helps create a new git repository.
-
 
 ## [git_mkdir](https://github.com/mnishiguchi/git_mkdir)
 

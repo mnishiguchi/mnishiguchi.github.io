@@ -3,16 +3,13 @@ layout: post
 title: Creating models in Rails
 comments: true
 tags:
-- rails
-- postgresql
-- active_record
-- database
-
+  - rails
+  - postgresql
+  - active_record
+  - database
 ---
 
-This is my memo on *{{ page.title }}*.
-
- 
+This is my memo on _{{ page.title }}_.
 
 #### Create models and migration files (database schema)
 
@@ -40,6 +37,7 @@ $ rake db:migrate:reset
 ```
 
 #### Create a seed file and fill the database with sample database
+
 - This allows us to check if database is working as we expects before moving on to actually writing application code.
 - Use `create!` instead of `create` so that we can detect syntax error easily.
 

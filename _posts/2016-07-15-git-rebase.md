@@ -3,12 +3,11 @@ layout: post
 title: Git rebase
 comments: true
 tags:
-- git
+  - git
 ---
 
-
-
 ## Use case
+
 > One of the best ways to incorporate rebasing into your workflow is to clean up local, in-progress features.
 
 - [https://www.atlassian.com/git/tutorials/merging-vs-rebasing/](https://www.atlassian.com/git/tutorials/merging-vs-rebasing/)
@@ -42,6 +41,7 @@ $ git rebase --continue
 ```
 
 ## Undoing `git rebase`
+
 - [stackoverflow](http://stackoverflow.com/a/135614/3837223)
 
 ```bash

@@ -7,9 +7,8 @@ tags:
   - fontawesome
 comments: true
 ---
+
 This is my notes on simple loading icon.
-
-
 
 ## dependencies
 
@@ -19,6 +18,7 @@ This is my notes on simple loading icon.
 - https://fontawesome.com/v4.7.0/examples/
 
 ## what I want to achieve
+
 - initially the loading icon is hidden
 - when a link is clicked, the loading icon appears spinning
 

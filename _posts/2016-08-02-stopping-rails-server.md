@@ -3,12 +3,10 @@ layout: post
 title: Stopping Rails server
 comments: true
 tags:
-- rails
-- server
-- process
+  - rails
+  - server
+  - process
 ---
-
-
 
 ### When stopping a currently-running server
 

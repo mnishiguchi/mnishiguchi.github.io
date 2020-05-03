@@ -3,12 +3,11 @@ layout: post
 title: Web design is fun to learn
 comments: true
 tags:
-- html
-- css
+  - html
+  - css
 ---
 
 I was taking this wonderful Web Design course (Professor: [Rachid Mrad](http://rachidmrad.com)) at University of District of Columbia in the Spring 2016 semester, and today was the last class. Mr. Mrad kindly invited us students to dinner. It was so much fun. I really enjoyed my whole time in this course. I was so fortunate to have an awesome professor and hard-working "graphic designer" classmates. Me surrounded by graphic designers was the important part to me, because I was primarily a web developer and was avoiding the designing process since I first started learning HTML.
-
 
 Because I had already studied a lot of basic HTML, CSS and JS previously, my intention of taking this class was to review the basics and solidify those skills. It was very exciting about having Mr. Rachid as a professor because he was an experienced Web Designer/Developer/Project Manager who had graphic design background and works for a large organization's web applications. This guy is amazing; he offered tons of useful techniques in every single class. After all, I had no time for relaxing at all.
 

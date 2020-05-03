@@ -7,9 +7,8 @@ tags:
   - iziToast
 comments: true
 ---
+
 This is my note on how to set up iziToast in rails 5.2 app.
-
-
 
 ## system used
 

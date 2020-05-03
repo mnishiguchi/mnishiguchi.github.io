@@ -3,11 +3,10 @@ layout: post
 title: Awesome work experience at API
 comments: true
 tags:
-- project
+  - project
 ---
 
 I was very fortunate to have an opportunity to work for [American Petroleum Institute (API)](http://www.api.org/) for four weeks, where I had an invaluable experience as a web programmer.
-
 
 I was there to primarily check HTML and CSS for each page of the API's new website and to redirect pages from the old site to the new site.
 

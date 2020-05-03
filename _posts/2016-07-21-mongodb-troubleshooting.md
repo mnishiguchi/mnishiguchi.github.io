@@ -3,10 +3,8 @@ layout: post
 title: Mongodb troubleshooting
 comments: true
 tags:
-- mongodb
+  - mongodb
 ---
-
-
 
 ### mongodb can't start with Invariant failure false
 

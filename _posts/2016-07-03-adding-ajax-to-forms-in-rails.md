@@ -3,14 +3,11 @@ layout: post
 title: Adding Ajax to forms in Rails
 comments: true
 tags:
-- rails
-- ajax
-
+  - rails
+  - ajax
 ---
 
-This is my memo on *{{ page.title }}*.
-
- 
+This is my memo on _{{ page.title }}_.
 
 Adding Ajax to web forms is a common practice so Rails makes Ajax easy to implement.
 
@@ -36,8 +33,8 @@ or using `link_to`
 ```slim
 ...
 - moving.tags.each do |tag|
-  = link_to tag.name, moving_household_items_path(filter: tag.name), 
-    method: :get, remote: true, class: "btn btn-xs btn-info" 
+  = link_to tag.name, moving_household_items_path(filter: tag.name),
+    method: :get, remote: true, class: "btn btn-xs btn-info"
 ...
 ```
 
@@ -76,9 +73,11 @@ Replace the content by rendering a partial.
 When a filter button is clicked, the following script is invoked via household_items#index action.
 It replaces the table content with filtered data.
  */
-$(document).ready(function(){
-  $("#moving_items").html("<%= escape_javascript(render 'shared/moving_items', moving: @moving, household_items: @household_items) %>")
-})
+$(document).ready(function () {
+  $('#moving_items').html(
+    "<%= escape_javascript(render 'shared/moving_items', moving: @moving, household_items: @household_items) %>"
+  );
+});
 ```
 
 ## References

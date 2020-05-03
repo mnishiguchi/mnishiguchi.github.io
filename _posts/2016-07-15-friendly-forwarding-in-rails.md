@@ -3,10 +3,8 @@ layout: post
 title: Friendly forwarding in Rails
 comments: true
 tags:
-- rails
-
+  - rails
 ---
-
 
 ### When forwarding to the URL immediately before current one
 
@@ -42,7 +40,6 @@ module SessionsHelper
   end
 end
 ```
-
 
 #### `request.referrer`
 

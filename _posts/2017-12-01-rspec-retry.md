@@ -3,12 +3,10 @@ layout: post
 title: Rspec retry
 comments: true
 tags:
-- ruby
-- rails
-- rspec
+  - ruby
+  - rails
+  - rspec
 ---
-
-
 
 ```rb
 # Gemfile
@@ -46,5 +44,6 @@ end
 ```
 
 ## Links and References
+
 - https://github.com/NoRedInk/rspec-retry
 - https://relishapp.com/rspec/rspec-core/docs/metadata/user-defined-metadata

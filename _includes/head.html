@@ -13,11 +13,11 @@
 
   <link rel="icon" type="image/png" href="{% link /assets/images/icon.png %}" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="{% link /assets/main-bundle.css %}">
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{% link atom.xml %}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-  <script src="{% link /assets/js/main.js %}"></script>
+  <script src="{% link /assets/main-bundle.js %}"></script>
 
   {% if page.url == "/" %}
     <!-- https://www.netlifycms.org/docs/add-to-your-site/#add-the-netlify-identity-widget -->

@@ -3,33 +3,33 @@ layout: post
 title: Modal dialog with pure CSS
 comments: true
 tags:
-- html
-- css
-- javascript
+  - html
+  - css
+  - javascript
 ---
 
 I wanted to make the site navigation appear on a modal dialog box. After googling around, I found that I could implement modal with pure CSS. I thought this was a great opportunity to learn how to implement simple modal without JS.
 
 ## Objectives
+
 - Create a simple modal dialog box that displays the navigation menu.
 - Open and close the modal by clicking a button.
 - Implement it with pure CSS (an anchor link and the CSS pseudo selector `:target`).
 
-
-
 ## Analysis
 
 ### Advantages
+
 - It works without JavaScript.
 - The code for the functionality is simple and located in a single place.
 
 ### Disadvantages
+
 - When I press the back button and re-visit the URL where the modal was open, the modal dialog opens again. This behavior is a little strange.
 - It is difficult to prevent the page from scrolling without JavaScript. Even if the transparent modal overlay is covering the whole page, we can still scroll the page from above the overlay, which is a little strange in the material design standpoint.
 
-
-
 ## Solutions to above-mentioned disadvantages
+
 At first, I was trying to prevent the page from scrolling when the modal is open.
 And because I wanted to stick to the pure CSS implementation, it was very challenging to do it.
 In fact, as of now I do not know how to stop the page from scrolling without JS.
@@ -43,14 +43,14 @@ I realized that the simplest solution for the problem of the page scrolling was
 to simply not use transparent background color because if it is invisible,
 we do not care even if it is actually scrolling.
 
-
-
 ## Implementation
 
 ### HTML
+
 The anchor link to `#open-navigation` is used to trigger the modal to open.
 
 {% raw %}
+
 ```html
 <a href="#open-navigation" title="Open" class="hamburger">
   &#8801
@@ -76,32 +76,40 @@ The anchor link to `#open-navigation` is used to trigger the modal to open.
   </ul>
 </nav>
 ```
+
 {% endraw %}
 
-
-
 ### SCSS
+
 I trigger the opening/closing of the modal by using an anchor link and the CSS pseudo selector `:target`. When the hamburger that is lined to `#open-navigation` is clicked, the browser targets the element with that ID and gives that element the `:target` pseudo selector. Taking advantage of that, I can switch the modal by the presence of the `:target` pseudo selector on the modal container element.
 
 {% raw %}
+
 ```scss
 @mixin modal {
   opacity: 0; // Hidden by default
   pointer-events: none; // Disable mouse/touch events by default
   position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 10; // Sit on top of contents
   width: 100vw; // Full width
   height: 100vh; // Full height
   background: $black;
-  &:target { // This is triggered by an anchor hash link to this element.
+  &:target {
+    // This is triggered by an anchor hash link to this element.
     opacity: 1;
-    pointer-events: auto;  // Enable mouse/touch events.
+    pointer-events: auto; // Enable mouse/touch events.
   }
 }
 @mixin modal-dialog {
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 11;
   display: block;
   width: 80%;
@@ -113,7 +121,8 @@ I trigger the opening/closing of the modal by using an anchor link and the CSS p
 
 .hamburger {
   position: absolute;
-  top: 16px; right: 10px;
+  top: 16px;
+  right: 10px;
   z-index: 3;
   display: inline-block;
   background: none;
@@ -128,7 +137,7 @@ I trigger the opening/closing of the modal by using an anchor link and the CSS p
     text-decoration: none;
   }
   // Hide it when larger than iPad.
-  @media only screen and (min-width : 768px) {
+  @media only screen and (min-width: 768px) {
     display: none;
   }
 }
@@ -152,16 +161,16 @@ nav {
         display: block;
         color: #555;
         background: white;
-        padding: 0 .8rem;
+        padding: 0 0.8rem;
         width: 100%;
         height: 56px;
         line-height: 56px;
       }
-      &.active a{
+      &.active a {
         color: #ccc;
         background: #eee;
         text-decoration: none;
-        cursor: default;  // Use default cursor instead of the finger pointer.
+        cursor: default; // Use default cursor instead of the finger pointer.
       }
     }
   }
@@ -173,11 +182,11 @@ body.modal-is-open {
   overflow: hidden;
 }
 ```
+
 {% endraw %}
 
-
-
 ### JavaScript (optional)
+
 If I really have to prevent the page from scrolling, I could do it with JavaScript;
 however if I do so, maybe I might as well trigger the modal opening/closing by
 toggling the `modal-is-open` class in the first place.
@@ -188,48 +197,50 @@ possible scenarios where we want to re-configure the ability of scrolling on and
 Because of that, the code can become buggy or difficult to maintain.
 
 {% raw %}
-```js
-( function() {
-  // Wait until DOM is loaded and then execute.
-  document.addEventListener( "DOMContentLoaded", function( event ) {
 
+```js
+(function () {
+  // Wait until DOM is loaded and then execute.
+  document.addEventListener('DOMContentLoaded', function (event) {
     // Check the initial state.
     toggleModal();
 
     // Keep watch on hash change due to back buttoon or history.
-    window.addEventListener( "hashchange", toggleModal );
+    window.addEventListener('hashchange', toggleModal);
 
     // Keep watch on page refresh.
-    window.addEventListener( "load", toggleModal );
+    window.addEventListener('load', toggleModal);
 
     // Keep watch on screen rotation or resize.
-    window.addEventListener( 'resize', toggleModal );
-
+    window.addEventListener('resize', toggleModal);
 
     /**
      * Toggle the ".modal-is-open" class on document.body checking whether the nav
      * is targeted of not.
      */
     function toggleModal() {
-      if ( document.querySelector( "nav:target" ) ) {
-        document.body.classList.add( "modal-is-open" );
+      if (document.querySelector('nav:target')) {
+        document.body.classList.add('modal-is-open');
       } else {
-        document.body.classList.remove( "modal-is-open" );
+        document.body.classList.remove('modal-is-open');
       }
     }
   });
 })();
 ```
+
 {% endraw %}
 
 ## Conclusion
+
 - It is great to know that I can trigger the navigation to open with pure CSS only.
 - Although classic-style modal often comes with transparent overlay, we can consider
-non-transparent overlay so that I need not worry about potential issue of
-scrolling page contents.
+  non-transparent overlay so that I need not worry about potential issue of
+  scrolling page contents.
 - There are tons of other options to consider, including:
   - [Sliding Sidebar by mdo](https://github.com/poole/lanyon)
   - [Full-Screen Pushing Navigation by Sebastiano Guerriero](https://codyhouse.co/gem/full-screen-pushing-navigation/)
 
 ## Reference
+
 - [Modal in pure html and css - JSFiddle](http://jsfiddle.net/raving/1mhsynmw/)

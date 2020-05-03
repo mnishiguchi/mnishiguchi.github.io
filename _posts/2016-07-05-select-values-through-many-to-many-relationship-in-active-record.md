@@ -3,16 +3,13 @@ layout: post
 title: Select values through many to many relationship in active record
 comments: true
 tags:
-- rails
-- active_record
-- postgresql
-- database
-
+  - rails
+  - active_record
+  - postgresql
+  - database
 ---
 
-This is my memo on *{{ page.title }}*.
-
- 
+This is my memo on _{{ page.title }}_.
 
 #### Query for grandchildren, through a many to many relationship
 

@@ -8,9 +8,9 @@ tags:
   - sql
 comments: true
 ---
+
 Today my colleague points out that confusing behavior of `where.not` query dealing with `nil`.
 Here is my note on it.
-
 
 #### all records
 
@@ -90,4 +90,5 @@ User.where(comment_id: nil).count
 ```
 
 ## links
+
 - https://robots.thoughtbot.com/activerecord-s-where-not-and-nil

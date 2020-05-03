@@ -3,20 +3,21 @@ layout: post
 title: Document-oriented database
 comments: true
 tags:
-- database
-- mongodb
+  - database
+  - mongodb
 ---
 
-
-
 ## Document-oriented database vs Relationoal database
+
 - Different ways to store information.
 
 #### Relationoal database
+
 - Schema's in relational databases are fairly rigid.
 - JOIN queries can get expensive and slow down our app.
 
 #### Document-oriented database
+
 - Provides a more flexible, scalable solution for less complex domain models.
 - Suitable for working with a flexible data model, that involves similar, but different objects.
 
@@ -25,17 +26,17 @@ tags:
 ## MongoDB
 
 - An open-source document database that provides:
-  + High Performance
-  + High Availability
-  + Automatic Scaling
+  - High Performance
+  - High Availability
+  - Automatic Scaling
 - Its data structure composed of field(key) and value pairs:
-  + similar to JSON objects
-  + stored as BJSON
-  + fields may include other documents, arrays, and arrays of documents
+  - similar to JSON objects
+  - stored as BJSON
+  - fields may include other documents, arrays, and arrays of documents
 - collection + operation + modification = result
-  + `db.your_collection.find(...)`
-  + `db.your_collection.update(...)`
-  + `db.your_collection.remove(...)`
+  - `db.your_collection.find(...)`
+  - `db.your_collection.update(...)`
+  - `db.your_collection.remove(...)`
 
 ```bash
 MongoDB            | Relational DB
@@ -215,6 +216,7 @@ WriteResult({ "nRemoved" : 1 })
 ---
 
 ## Cursors
+
 - A pointer to the result set that is returned when you ask MongoDB for data.
 - Using a cursor, we can do things, such as counting or skipping ahead, before actually pulling down data.
 

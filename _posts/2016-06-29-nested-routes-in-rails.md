@@ -3,16 +3,14 @@ layout: post
 title: Nested routes in Rails
 comments: true
 tags:
-- rails
-- routes
-
+  - rails
+  - routes
 ---
 
-This is my memo on *{{ page.title }}*.
-
- 
+This is my memo on _{{ page.title }}_.
 
 ## [Nested Routes](http://guides.rubyonrails.org/routing.html#path-and-url-helpers#nested-resources)
+
 - Never nest more than 2-level deep.
 - Needs two arguments
 
@@ -42,18 +40,9 @@ Example of a `new` form
 ```html
 <h2>New Song</h2>
 
-<%= form_for [@artist, @song] do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :album %>
-  <%= f.text_field :album %>
-
-  <%= f.label :preview_url %>
-  <%= f.text_field :preview_url %>
-
-  <%= f.submit %>
-<% end %>
+<%= form_for [@artist, @song] do |f| %> <%= f.label :title %> <%= f.text_field
+:title %> <%= f.label :album %> <%= f.text_field :album %> <%= f.label
+:preview_url %> <%= f.text_field :preview_url %> <%= f.submit %> <% end %>
 ```
 
 ```rb

@@ -3,14 +3,12 @@ layout: post
 title: Using ES6 with browserify-rails
 comments: true
 tags:
-- rails
-- browserify
-- es6
+  - rails
+  - browserify
+  - es6
 ---
 
-This is my memo on *{{ page.title }}*.
-
-
+This is my memo on _{{ page.title }}_.
 
 #### Install [browserify-rails](https://github.com/browserify-rails/browserify-rails)
 
@@ -50,7 +48,7 @@ app/assets/javascripts/application.js
 //= require turbolinks
 //= require_tree .
 
-require("./main");
+require('./main');
 ```
 
 app/assets/javascripts/main.js
@@ -64,9 +62,9 @@ hello();
 app/assets/javascripts/hello.js
 
 ```js
-module.exports =  function(){
+module.exports = function () {
   alert('hello world');
-}
+};
 ```
 
 #### [Deploy the project to Heroku]({% post_url 2016-05-13-deploying-rails-app-to-heroku %})
@@ -84,4 +82,5 @@ $ bundle exec rake assets:precompile
 ```
 
 ## Reference
+
 - [browserify-rails](https://github.com/browserify-rails/browserify-rails)

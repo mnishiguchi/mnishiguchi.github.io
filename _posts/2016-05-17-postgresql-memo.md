@@ -3,14 +3,12 @@ layout: post
 title: PostgreSQL memo
 comments: true
 tags:
-- postgresql
-- database
-- rails
+  - postgresql
+  - database
+  - rails
 ---
 
-*{{ page.title }}*.
-
- 
+_{{ page.title }}_.
 
 ## Outside `psql`
 
@@ -33,7 +31,6 @@ $ psql -l
  gladiator                         | masa  | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
  hello_app_1_development           | masa  | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
 ```
-
 
 #### List all tables in the specified database
 
@@ -153,6 +150,7 @@ DELETE 1
 ## Troubleshooting
 
 #### psql: FATAL: database “db_name” is not currently accepting connections
+
 - [SO](http://stackoverflow.com/a/31147811/3837223)
 
 ```
@@ -164,13 +162,16 @@ db:setup
 ```
 
 #### psql: FATAL: database ... does not exist
+
 - Check this: [stackoverflow](http://stackoverflow.com/a/17936043/3837223)
 
 #### Wrong use of single/double quotes
+
 - Single quotes are used to indicate the beginning and end of a string in SQL.
 - NOTE: Using `""` for a string causes an error.
 
 #### Missing semicolon
+
 - Make sure that you place a semicolon at the end of the statement.
 
 ---

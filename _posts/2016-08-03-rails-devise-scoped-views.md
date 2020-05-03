@@ -3,15 +3,12 @@ layout: post
 title: Rails Devise scoped views
 comments: true
 tags:
-- rails
-- devise
+  - rails
+  - devise
 ---
-
-
 
 If you have more than one Devise model in your application (such as User and Admin),
 by default Devise uses the same views for all models. But Devise offers an easy way to customize views.
-
 
 ### Enable scoped views
 
@@ -73,6 +70,7 @@ end
 ```
 
 ### Delete unnecessary devise files
+
 - `app/views/devise/*`
 - `app/controllers/admins/passwords_controller.rb`
 - `app/controllers/admins/registrations_controller.rb`
@@ -84,4 +82,4 @@ end
 
 - [plataformatec/devise#configuring-views](https://github.com/plataformatec/devise#configuring-views)
 - [Rails - Devise Gem remove Sign up and Forgot Password modules](http://stackoverflow.com/a/23009970/3837223)
-- [Railsでdeviseひとつで複数モデルを管理しよう](http://qiita.com/Yama-to/items/54ab4ce08e126ef7dade)
+- [Rails で devise ひとつで複数モデルを管理しよう](http://qiita.com/Yama-to/items/54ab4ce08e126ef7dade)

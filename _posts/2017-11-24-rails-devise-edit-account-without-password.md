@@ -3,16 +3,17 @@ layout: post
 title: Rails devise edit user account without requiring password
 comments: true
 tags:
-- ruby
-- rails
-- devise
-- authentication
+  - ruby
+  - rails
+  - devise
+  - authentication
 ---
 
 ## Problem
+
 - I want to let user update user account info without password, unless he/she wants to change password.
 - By default, devise requires the user to enter current password when user wants to change any field in
-the devise user model.
+  the devise user model.
 
 #### Version of Ruby, Rails and Devise:
 
@@ -21,6 +22,7 @@ the devise user model.
 - devise-4.3.0
 
 ## Solution
+
 #### Create your registration controller in `app/controllers/registrations_controller.rb`
 
 ```rb
@@ -46,5 +48,6 @@ devise_for :users, controllers: { registrations: "registrations" }
 ```
 
 ## Related links
+
 - https://stackoverflow.com/questions/23067299/devise-change-password-not-working-unknown-attribute-current-password/47481756#47481756
 - https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-edit-their-account-without-providing-a-password

@@ -3,12 +3,11 @@ layout: post
 title: Deploying Rails app to Heroku
 comments: true
 tags:
-- heroku
-- rails
+  - heroku
+  - rails
 ---
 
-This is my memo on *{{ page.title }}*.
-
+This is my memo on _{{ page.title }}_.
 
 ## About Heroku
 
@@ -17,15 +16,16 @@ This is my memo on *{{ page.title }}*.
 - Uses the PostgreSQL database (NOTE: You need to add the 'pg' gem to allow Rails to talk to Postgres)
 
 #### Heroku Commands
+
 - [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command)
 
 #### Heroku config variables
+
 - [Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars)
 
-
 ## Heroku setup (one time per machine)
-- [RUBY ON RAILS TUTORIAL (3ND ED.)](https://www.railstutorial.org/book/beginning#sec-deploying)
 
+- [RUBY ON RAILS TUTORIAL (3ND ED.)](https://www.railstutorial.org/book/beginning#sec-deploying)
 
 ## Create a Heroku repo for the app
 
@@ -82,21 +82,19 @@ $ heroku run rake db:seed
 $ heroku restart
 ```
 
-
 ## Rename the Heroku URL
+
 - NOTE: Don’t forget to change necessary configurations because renaming the project will cause its url to change as well.
 
 ```bash
 $ heroku rename <new-name>
 ```
 
-
 ## Diagnose problems at Heroku
 
 - `$ heroku logs`
 - `$ heroku run rails console`
 - `$ heroku run console --sandbox`
-
 
 ## [Delete and Redeploy Rails app to heroku](http://stackoverflow.com/questions/22043111/delete-and-redeploy-rails-app-to-heroku)
 
@@ -112,11 +110,13 @@ $ git push heroku -u master
 ```
 
 ## [Push to a specific app at Heroku](https://devcenter.heroku.com/articles/git)
+
 ```bash
 $ heroku git:remote -a falling-wind-1624
 ```
 
 ## Remove build pack
+
 ```bash
 $ heroku config:unset BUILDPACK_URL
 ```
@@ -126,5 +126,6 @@ $ heroku config:unset BUILDPACK_URL
 - [Heroku Troubleshooting]({% post_url 2016-05-13-heroku-troubleshooting %})
 
 ## Reference
+
 - [RUBY ON RAILS TUTORIAL (3ND ED.)](https://www.railstutorial.org/book/beginning#sec-deploying)
 - [Deploying with Git](https://devcenter.heroku.com/articles/git)

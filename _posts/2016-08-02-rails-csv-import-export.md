@@ -3,12 +3,10 @@ layout: post
 title: Rails CSV import and export
 comments: true
 tags:
-- rails
-- csv
-- rspec
+  - rails
+  - csv
+  - rspec
 ---
-
-
 
 #### Routes
 

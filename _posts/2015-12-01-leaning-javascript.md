@@ -3,11 +3,10 @@ layout: post
 title: Learning JavaScipt
 comments: true
 tags:
-- javascript
+  - javascript
 ---
 
 Recently I started reading about JavaScript to learn it more in depth because I am curious about JavaScript frameworks. They seem powerful in creating amazing user interfaces. Also, there is no reason for me not to learn JavaScript as a web developer. I see so many new libraries or frameworks coming out constantly and just want to keep up with new technologies.
-
 
 Previously I was using CoffeeScript when I build Rails applications, but most of the time I can solve problems on the server side and tend to seek solutions by writing Ruby code, which prevented me from studying JavaScript seriously.
 
