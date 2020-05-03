@@ -16,7 +16,7 @@ This is my note on how to set up PostgreSQL Trigram Search, which is so powerful
 
 ## example model
 
-```
+```rb
 # == Schema Information
 #
 # Table name: agencies
@@ -45,7 +45,7 @@ gem "pg_search"
 
 create a migration file
 
-```bash
+```rb
 $ rails g migration install_pg_trgm
 ```
 
