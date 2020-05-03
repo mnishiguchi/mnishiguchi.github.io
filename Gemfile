@@ -5,6 +5,7 @@ source "https://rubygems.org"
 gem "jekyll", "~> 4.0"
 gem 'jekyll-seo-tag'
 gem "jekyll-gist"
+gem "jekyll-inline-svg"
 
 group :development do
   gem "foreman"

@@ -3,34 +3,41 @@ title: Home
 layout: application
 ---
 
-<figure class="mn-MasaChinatownWrapper">
-  <svg id="MasaChinatown" class="mn-SvgLineDrawing-svg" width="400" height="400" viewBox="0 0 400 400"
-    xmlns="http://www.w3.org/2000/svg">
-    <path d="M 0.00,0.00
-      C 0.00,0.00 0.00,400.00 0.00,400.00
-        0.00,400.00 389.00,400.00 389.00,400.00
-        391.77,399.99 395.44,400.29 397.69,398.40
-        401.28,395.38 400.00,381.80 400.00,377.00
-        400.00,377.00 400.00,307.00 400.00,307.00
-        400.00,307.00 400.00,0.00 400.00,0.00
-        400.00,0.00 0.00,0.00 0.00,0.00 Z" />
-  </svg>
-  <img data-svg="MasaChinatown" class="mn-SvgLineDrawing-imgHidden" src="/assets/images/masa-chinatown--mint.png"
-    alt="{{ site.author.name }}">
-</figure>
+<div class="card" style="width:402px;overflow: hidden;">
+  <figure class="mn-MasaChinatownWrapper">
+    <svg id="MasaChinatown" class="mn-SvgLineDrawing-svg" width="400" height="400" viewBox="0 0 400 400"
+      xmlns="http://www.w3.org/2000/svg">
+      <path d="M 0.00,0.00
+          C 0.00,0.00 0.00,400.00 0.00,400.00
+            0.00,400.00 389.00,400.00 389.00,400.00
+            391.77,399.99 395.44,400.29 397.69,398.40
+            401.28,395.38 400.00,381.80 400.00,377.00
+            400.00,377.00 400.00,307.00 400.00,307.00
+            400.00,307.00 400.00,0.00 400.00,0.00
+            400.00,0.00 0.00,0.00 0.00,0.00 Z" />
+    </svg>
+    <img data-svg="MasaChinatown" class="mn-SvgLineDrawing-imgHidden" src="/assets/images/masa-chinatown--mint.png"
+      alt="{{ site.author.name }}">
+  </figure>
+  <div class="card-body">
+    <p class="card-text">
+      I am passionate about building maintainable apps using primarily Ruby, Rails Javascript and React. Also I know and
+      enjoy:
+      <div class="mn-Slideshow">
+        <div class="mn-Slideshow-mover">
+          {% assign n = site.static_files | size %}
+          {% assign shuffled_static_files = site.static_files | sample: n %}
 
-<p>
-  I am passionate about building maintainable web applications using primarily Ruby, Rails and React.
-</p>
-
-<h2>I am good at</h2>
-<p>
-  writing maintainable clean code in Ruby and Javascript
-</p>
-
-<h2>I know and enjoy</h2>
-<p>
-  Android, Angular, C++, Design Patterns, Elasticsearch, Elixir, GIMP, Git, Heroku, HTML5, Java, Javascript,
-  Jekyll, jQuery, Kotlin, Linux, Netlify, Nginx, Object-Oriented Programming, Phoenix, PostgreSQL, React,
-  Redux, RSpec, Ruby, SASS, Webpack, Wordpress, and more.
-</p>
+          {% for image in shuffled_static_files %}
+            {% if image.path contains "assets/images/brands" %}
+              <div class="mn-Slideshow-icon"
+                title="{{ image.path | replace: 'assets/images/brands/' | replace: '/' | replace: '.svg' }}">
+                {% svg "{{ image.path }}" %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </p>
+  </div>
+</div>

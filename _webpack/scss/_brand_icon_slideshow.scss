@@ -1,0 +1,39 @@
+$icon-side-length: 60px;
+$icon-padding: 2px;
+$icon-count: 40;
+
+// https://css-tricks.com/infinite-all-css-scrolling-slideshow/
+.mn-Slideshow {
+  max-width: 400px;
+  min-height: 60px;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+
+  &-mover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: ($icon-side-length + $icon-padding) * $icon-count;
+    height: 100%;
+    transform: translate3d(0, 0, 0);
+    animation: mn-moveSlideshow 30s linear infinite;
+  }
+
+  &-icon {
+    display: inline-block;
+    width: $icon-side-length;
+    height: $icon-side-length;
+    padding-right: $icon-padding;
+  }
+
+  svg {
+    fill: darken($mn-mint, 15%);
+  }
+}
+
+@keyframes mn-moveSlideshow {
+  100% {
+    transform: translateX(-66.6666%);
+  }
+}

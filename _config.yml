@@ -1,3 +1,4 @@
+# Default config: https://jekyllrb.com/docs/configuration/default/
 title: Masatoshi Nishiguchi
 description: Software engineer who strives to write code with clean architecture, using Ruby, JS, React and more.
 permalink: pretty
@@ -22,6 +23,7 @@ exclude:
 plugins:
   - jekyll-gist
   - jekyll-seo-tag
+  - jekyll-inline-svg
 # https://fontawesome.com/v4.7.0/icons/
 icon_links:
   - [home, /]
