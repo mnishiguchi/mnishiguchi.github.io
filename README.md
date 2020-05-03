@@ -7,8 +7,11 @@ Masatoshi Nishiguchi's blog powered by Jekyll.
 ## Thanks
 
 - https://jekyllrb.com/
+- https://shopify.github.io/liquid/
 - https://webpack.js.org/
-- http://listjs.com/
+- https://listjs.com/
 - https://tympanus.net/codrops/2013/12/30/svg-drawing-animation/
 - https://netlify.com/
+- https://simpleicons.org/
+- https://getbootstrap.com/
 - etc
