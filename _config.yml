@@ -6,9 +6,6 @@ baseurl: ""
 ga_id: "UA-76603801-1"
 author:
   name: Masatoshi Nishiguchi
-sass:
-  sass_dir: _sass # the directory that contains sass partials
-  style: :compressed
 include:
   - _pages
   - _redirects
