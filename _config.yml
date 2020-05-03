@@ -2,9 +2,9 @@
 title: Masatoshi Nishiguchi
 description: Software engineer who strives to write code with clean architecture, using Ruby, JS, React and more.
 permalink: pretty
-url: "https://mnishiguchi.com"
+url: "https://mnishiguchi-jekyll.netlify.app"
 baseurl: ""
-ga_id: "UA-76603801-1"
+# ga_id: "UA-76603801-1"
 author:
   name: Masatoshi Nishiguchi
 include:
