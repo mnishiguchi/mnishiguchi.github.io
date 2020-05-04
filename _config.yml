@@ -9,7 +9,6 @@ author:
   name: Masatoshi Nishiguchi
 include:
   - _pages
-  - _redirects
 exclude:
   - .*
   - admin/index.js
@@ -17,6 +16,7 @@ exclude:
   - LICENSE*
   - node_modules
   - package.json
+  - Procfile.dev
   - README.md
   - webpack.config.js
   - yarn.lock
