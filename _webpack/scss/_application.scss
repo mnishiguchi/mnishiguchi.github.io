@@ -8,6 +8,8 @@ main {
 }
 
 pre.highlight {
+  // Make default text color white because the background is dark.
+  color: white;
   padding: .5rem;
 }
 
