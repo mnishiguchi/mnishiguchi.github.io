@@ -7,9 +7,13 @@ tags:
   - routes
 ---
 
-This is my memo on _{{ page.title }}_.
-
-> You are not limited to the seven routes that RESTful routing creates by default. If you like, you may add additional routes that apply to the collection or individual members of the collection. - Rails Guides
+<blockquote class="blockquote text-center">
+  <p class="mb-0">
+    You are not limited to the seven routes that RESTful routing creates by default.
+    If you like, you may add additional routes that apply to the collection or individual members of the collection.
+  </p>
+  <footer class="blockquote-footer">Rails Guides</footer>
+</blockquote>
 
 `config/routes.rb`
 

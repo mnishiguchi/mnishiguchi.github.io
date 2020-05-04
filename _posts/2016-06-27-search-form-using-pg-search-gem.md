@@ -6,11 +6,10 @@ tags:
   - rails
   - postgresql
   - database
+  - search
 ---
 
-This is my memo on _{{ page.title }}_.
-
-# Implementing search using pg_search gem
+## Implementing search using pg_search gem
 
 ![Screenshot 2015-07-18 21.51.47.png](https://qiita-image-store.s3.amazonaws.com/0/82804/1ce907d4-6210-9db0-c5b2-248bfdf587be.png)
 
@@ -23,7 +22,7 @@ This is my memo on _{{ page.title }}_.
 
 ## Gemfile
 
-```rb:
+```rb
 gem 'rails'
 gem 'pg'
 gem 'pg_search',   '~> 1.0.3'   # Named scopes that take advantage of PostgreSQL's full text search
@@ -32,7 +31,7 @@ gem 'pg_search',   '~> 1.0.3'   # Named scopes that take advantage of PostgreSQL
 
 ## Get started
 
-#### Model
+### Model
 
 - Add `include PgSearch` to use `pg_search` gem.
 - Define `pg_search_scope` When `search` method is called, searching will be performed based on the scope that is defined here.
@@ -59,14 +58,15 @@ class Artist < ApplicationRecord
 
   def self.perform_search(keyword)
     if keyword.present?
-    then Artist.search(keyword)
-    else Artist.all
+      Artist.search(keyword)
+    else
+      Artist.all
     end.sorted
   end
 end
 ```
 
-#### View
+### View
 
 - Create a search form.
 - Issue a GET#index request with the user's input as a search term.
@@ -82,12 +82,12 @@ h1.page-header All the Artists
 /...
 ```
 
-#### Controller
+### Controller
 
 ```rb
 class ArtistsController < ApplicationController
   def index
-    if params[:search].present?s
+    if params[:search].present?
       @artists = Artist.perform_search(params[:search])
     else
       @artists = Artist.all
@@ -96,8 +96,7 @@ class ArtistsController < ApplicationController
 # ...
 ```
 
-## references
+## References
 
 - [pg_search gem](https://github.com/Casecommons/pg_search)
 - [Railscasts PRO #343 Full-Text Search in PostgreSQL (pro)](https://www.youtube.com/watch?v=n41F29Qln5E)
-- [Rails and React](http://codeloveandboards.com/blog/2014/09/10/rails-and-react-ii-a-real-use-case/)

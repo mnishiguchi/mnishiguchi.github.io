@@ -15,17 +15,17 @@ This is my memo on _{{ page.title }}_.
 - Makes deploying Rails applications ridiculously easy as long as your source code is under version control with Git.
 - Uses the PostgreSQL database (NOTE: You need to add the 'pg' gem to allow Rails to talk to Postgres)
 
-#### Heroku Commands
+## Heroku Commands
 
 - [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command)
 
-#### Heroku config variables
+## Heroku config variables
 
 - [Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars)
 
 ## Heroku setup (one time per machine)
 
-- [RUBY ON RAILS TUTORIAL (3ND ED.)](https://www.railstutorial.org/book/beginning#sec-deploying)
+- [RUBY ON RAILS TUTORIAL](https://www.railstutorial.org/book/beginning#sec-deploying)
 
 ## Create a Heroku repo for the app
 
@@ -52,14 +52,14 @@ $ git push
 
 ## Push the app to the Heroku repo
 
-#### On a production site, with little traffic
+On a production site, with little traffic
 
 ```bash
 $ git push heroku master     # Push up to Heroku repo
 $ heroku run rake db:migrate # Inform Heroku of our db schema
 ```
 
-#### On a production site, with significant traffic (maintenance mode)
+On a production site, with significant traffic (maintenance mode)
 
 ```bash
 $ heroku maintenance:on
@@ -70,7 +70,9 @@ $ heroku run rake db:migrate # Inform Heroku of our db schema
 $ heroku maintenance:off
 ```
 
-#### Deploy the app, and populate the production database with sample users
+## Deploy the app
+
+Deploy the app, and populate the production database with sample users.
 
 ```bash
 $ git push heroku master     # Push up to Heroku repo
@@ -92,9 +94,11 @@ $ heroku rename <new-name>
 
 ## Diagnose problems at Heroku
 
-- `$ heroku logs`
-- `$ heroku run rails console`
-- `$ heroku run console --sandbox`
+```
+$ heroku logs
+$ heroku run rails console
+$ heroku run console --sandbox
+```
 
 ## [Delete and Redeploy Rails app to heroku](http://stackoverflow.com/questions/22043111/delete-and-redeploy-rails-app-to-heroku)
 
@@ -121,11 +125,7 @@ $ heroku git:remote -a falling-wind-1624
 $ heroku config:unset BUILDPACK_URL
 ```
 
-## Troubleshooting
-
-- [Heroku Troubleshooting]({% post_url 2016-05-13-heroku-troubleshooting %})
-
 ## Reference
 
-- [RUBY ON RAILS TUTORIAL (3ND ED.)](https://www.railstutorial.org/book/beginning#sec-deploying)
+- [RUBY ON RAILS TUTORIAL](https://www.railstutorial.org/book/beginning#sec-deploying)
 - [Deploying with Git](https://devcenter.heroku.com/articles/git)

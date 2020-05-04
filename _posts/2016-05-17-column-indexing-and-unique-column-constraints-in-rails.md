@@ -5,18 +5,18 @@ comments: true
 tags:
   - database
   - rails
+  - index
+  - performance
 ---
-
-This is my memo on _{{ page.title }}_.
 
 ### Column indexing
 
-- Looking up a row by an indexed column provides O(1) access to the data.
+- Looking up a row by an indexed column provides **O(1)** access to the data.
 - When creating a column in a database, it is important to consider whether we will need to find records by that column so that we can avoid a potential full-table scan.
 - Any foreign key column should additionally have an index.
 
 ```bash
-# # Add an index on the email column of the users table.
+# Add an index on the email column of the users table.
 $ rails generate migration add_index_to_users_email
 ```
 
@@ -45,5 +45,5 @@ end
 
 ## Reference
 
-- [RUBY ON RAILS TUTORIAL (3ND ED.)](https://www.railstutorial.org/book/modeling_users#aside-database_indices)
+- [RUBY ON RAILS TUTORIAL](https://www.railstutorial.org/book/modeling_users#aside-database_indices)
 - [Database level validation - Be The Better Rails Developer](http://blog.benroux.me/be-the-better-rails-developer)

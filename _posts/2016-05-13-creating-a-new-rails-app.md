@@ -9,7 +9,7 @@ tags:
 
 This is my memo on _{{ page.title }}_.
 
-#### Before getting started
+### Before getting started
 
 ```bash
 $ ruby -v       # Ensure that Ruby is installed.
@@ -17,7 +17,7 @@ $ rails -v      # Ensure that Rails is installed.
 $ git --version # Ensure that git is installed.
 ```
 
-#### Generate a new app (with PostgreSQL)
+### Generate a new app (with PostgreSQL)
 
 ```bash
 $ cd ~/workspace
@@ -40,39 +40,38 @@ In case that we need to specify a specific version of Rails
 $ rails _4.2.0_ new <app_name> -d postgresql
 ```
 
-#### In Gemfile, specify the gems needed by the app (optional)
+In Gemfile, specify the gems needed by the app (optional)
 
 ```bash
 $ bundle install --without production
 $ bundle update
 ```
 
-#### Set config/database.yml (if needed)
+Configure config/database.yml (if needed)
 
-- Username: By default, the same as your OS X user account.
+- By default, `username` is the same as your OS X user account.
 
-#### Create the database
+### Create the database
 
-- `$ [bundle exec] rake db:create`
+```
+$ bundle exec rake db:create
+```
 
 #### Check if it works on local server
 
-- `$ rails server`
+```
+$ rails server
+```
+
 - Visit [http://localhost:3000/](http://localhost:3000/)
 
-#### Create a static pages (such as home, about, etc)
+### Misc techniques
 
-#### Initialze a git repo (local and remote)
+#### Check currently installed Rails gems
 
-#### [Deploy it to Heroku]({% post_url 2016-05-13-deploying-rails-app-to-heroku %})
-
----
-
-## Misc techniques
-
-### Check currently installed Rails gems
-
-- `$ gem list rails`
+```
+$ gem list rails
+```
 
 #### Undoing generate
 
@@ -90,14 +89,14 @@ $ rails destroy scaffold Micropost
 #### Undoing migrate
 
 ```bash
-$ [bundle exec] rake db:migrate
-$ [bundle exec] rake db:rollback
+$ bundle exec rake db:migrate
+$ bundle exec rake db:rollback
 
 # To go all the way back to the beginning, we can use
-$ [bundle exec] rake db:migrate VERSION=0
+$ bundle exec rake db:migrate VERSION=0
 ```
 
-#### Ideas for debugging
+### Ideas for debugging
 
 - `= puts @foo.inspect`
 - Invoke `raise` to cause an exception.

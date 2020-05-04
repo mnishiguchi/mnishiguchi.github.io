@@ -18,9 +18,11 @@ So I decide to write up my past Heroku troubleshooting experiences for my future
 
 ## Diagnosing errors at Heroku
 
-- `$ heroku logs`
-- `$ heroku run rails console`
-- `$ heroku run console --sandbox`
+```
+$ heroku logs
+$ heroku run rails console
+$ heroku run console --sandbox
+```
 
 ## Some possible causes
 
@@ -77,7 +79,10 @@ $ heroku pg:reset DATABASE   # reset the production database
 ### [Missing CSS on Heroku Deployment](https://teamtreehouse.com/forum/missing-css-on-heroku-deployment)
 
 - [Rails Asset Pipeline on Heroku Cedar](https://devcenter.heroku.com/articles/rails-asset-pipeline)
-- `$ RAILS_ENV=production bundle exec rake assets:precompile`
+
+```
+$ RAILS_ENV=production bundle exec rake assets:precompile
+```
 
 ### [Check if the current Heroku app name is registered](http://stackoverflow.com/questions/2947190/pushing-app-to-heroku-problem)
 
@@ -137,8 +142,6 @@ $ git push heroku -u master
 ```bash
 $ rake tmp:cache:clear
 ```
-
----
 
 ## Reference
 

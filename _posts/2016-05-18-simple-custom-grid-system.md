@@ -6,8 +6,8 @@ tags:
   - css
 ---
 
-This is my memo on _{{ page.title }}_.
-I just wanted to create a simple reusable CSS grid system without using Bootstrap. Using Flexbox, I was able to accomplish it quite easily.
+I just wanted to create a simple reusable CSS grid system without using Bootstrap.
+Using Flexbox, I was able to accomplish it quite easily.
 
 NOTE: The code is not tested.
 

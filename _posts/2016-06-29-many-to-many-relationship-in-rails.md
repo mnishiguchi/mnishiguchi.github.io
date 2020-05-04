@@ -9,8 +9,7 @@ tags:
   - database
 ---
 
-This is my memo on _{{ page.title }}_.
-Adding a `many to many` relationship between the following two models.
+Adding a `many to many` relationship between the following two models:
 
 - `User`
 - `Song`
@@ -47,7 +46,7 @@ class Favorite < ActiveRecord::Base
 end
 ```
 
-#### Two models access each other through the join table.
+#### Two models accessing each other through the join table
 
 `app/models/user.rb`
 

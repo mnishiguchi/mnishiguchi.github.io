@@ -6,7 +6,7 @@ tags:
   - rails
 ---
 
-#### Enabling/disabling caching in development environment
+## Enabling/disabling caching in development environment
 
 Use the following commands:
 
@@ -20,14 +20,17 @@ $ rails dev:cache
 Development mode is no longer being cached.
 ```
 
-#### Fragment Caching
+## Fragment Caching
 
-```html
-<% @products.each do |product| %> <% cache product do %> <%= render product %>
-<% end %> <% end %>
+```
+<% @products.each do |product| %>
+  <% cache product do %>
+    <%= render product %>
+  <% end %>
+<% end %>
 ```
 
-```html
+```
 <%= render partial: 'products/product', collection: @products, cached: true %>
 ```
 

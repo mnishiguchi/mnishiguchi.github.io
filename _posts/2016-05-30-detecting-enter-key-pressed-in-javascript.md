@@ -6,9 +6,7 @@ tags:
   - javascript
 ---
 
-This is my memo on _{{ page.title }}_.
-
-Vanilla JS
+## Vanilla JS
 
 ```js
 // Listen for the enter key press.
@@ -19,8 +17,6 @@ document.body.addEventListener('keyup', function (e) {
   }
 });
 ```
-
-Vanilla JS
 
 ```js
 // Listen for the enter key press.
@@ -47,7 +43,7 @@ function triggerEvent(elem, event) {
 }
 ```
 
-jQuery
+## jQuery
 
 ```js
 $('body').on('keyup', function (evt) {
@@ -57,11 +53,6 @@ $('body').on('keyup', function (evt) {
   }
 });
 ```
-
-#### My demo
-
-- [Temperature converter](http://mnishiguchi.com/temperature_converter/)
-- [Pixel art](http://mnishiguchi.com/pixart_js)
 
 ## References
 

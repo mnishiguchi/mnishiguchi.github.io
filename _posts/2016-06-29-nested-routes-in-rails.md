@@ -7,12 +7,7 @@ tags:
   - routes
 ---
 
-This is my memo on _{{ page.title }}_.
-
-## [Nested Routes](http://guides.rubyonrails.org/routing.html#path-and-url-helpers#nested-resources)
-
-- Never nest more than 2-level deep.
-- Needs two arguments
+The rule of thumb is to never nest more than 1-level deep.
 
 ```rb
 Rails.application.routes.draw do
@@ -37,12 +32,18 @@ edit_artist_song GET    /artists/:artist_id/songs/:id/edit(.:format) songs#edit
 
 Example of a `new` form
 
-```html
+```
 <h2>New Song</h2>
 
-<%= form_for [@artist, @song] do |f| %> <%= f.label :title %> <%= f.text_field
-:title %> <%= f.label :album %> <%= f.text_field :album %> <%= f.label
-:preview_url %> <%= f.text_field :preview_url %> <%= f.submit %> <% end %>
+<%= form_for [@artist, @song] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :album %>
+  <%= f.text_field :album %>
+  <%= f.label :preview_url %>
+  <%= f.text_field :preview_url %>
+  <%= f.submit %>
+<% end %>
 ```
 
 ```rb
@@ -85,25 +86,26 @@ class SongsController < ApplicationController
   ...
 ```
 
----
-
 ## Misc
 
-#### Passing data through params
+### Passing data through params
 
 - Three ways:
   1. query string
-  2. GET some path
-  3. POST some path
+  2. GET
+  3. POST
 - Always string
 
-#### [Rails Named Routes: Path Vs. URL](https://www.viget.com/articles/rails-named-routes-path-vs-url)
+#### Path vs URL
 
-- You need to use an absolute URI when linking to an SSL site from a non-SSL site, and vice versa.
-- You need to use an absolute URI when creating a redirect (e.g. with redirect_to.)
+You need to use an absolute URI
+
+- when linking to an SSL site from a non-SSL site, and vice versa.
+- when creating a redirect (e.g. with redirect_to.)
 
 ---
 
 ## References
 
-- [Nested Routes](http://guides.rubyonrails.org/routing.html#path-and-url-helpers#nested-resources)
+- [Nested Routes | Rails Guides](https://guides.rubyonrails.org/routing.html#limits-to-nesting)
+- [Rails Named Routes: Path Vs. URL](https://www.viget.com/articles/rails-named-routes-path-vs-url)

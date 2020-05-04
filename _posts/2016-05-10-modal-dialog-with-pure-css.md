@@ -10,25 +10,26 @@ tags:
 
 I wanted to make the site navigation appear on a modal dialog box. After googling around, I found that I could implement modal with pure CSS. I thought this was a great opportunity to learn how to implement simple modal without JS.
 
-## Objectives
+## My goals
 
 - Create a simple modal dialog box that displays the navigation menu.
 - Open and close the modal by clicking a button.
 - Implement it with pure CSS (an anchor link and the CSS pseudo selector `:target`).
 
-## Analysis
-
-### Advantages
+## Advantages of pure CSS modal
 
 - It works without JavaScript.
 - The code for the functionality is simple and located in a single place.
 
-### Disadvantages
+## Some issues
+
+### The modal open state getting preserved in the browser history
 
 - When I press the back button and re-visit the URL where the modal was open, the modal dialog opens again. This behavior is a little strange.
-- It is difficult to prevent the page from scrolling without JavaScript. Even if the transparent modal overlay is covering the whole page, we can still scroll the page from above the overlay, which is a little strange in the material design standpoint.
 
-## Solutions to above-mentioned disadvantages
+### A page getting scrolled under the modal
+
+- It is difficult to prevent the page from scrolling without JavaScript. Even if the transparent modal overlay is covering the whole page, we can still scroll the page from above the overlay.
 
 At first, I was trying to prevent the page from scrolling when the modal is open.
 And because I wanted to stick to the pure CSS implementation, it was very challenging to do it.
@@ -43,7 +44,7 @@ I realized that the simplest solution for the problem of the page scrolling was
 to simply not use transparent background color because if it is invisible,
 we do not care even if it is actually scrolling.
 
-## Implementation
+## Get started
 
 ### HTML
 
@@ -70,9 +71,6 @@ The anchor link to `#open-navigation` is used to trigger the modal to open.
     <li class="nav-item">
       <a href="/blog/">Blog</a>
     </li>
-    <li class="nav-item">
-      <a href="/projects">Projects</a>
-    </li>
   </ul>
 </nav>
 ```
@@ -81,7 +79,9 @@ The anchor link to `#open-navigation` is used to trigger the modal to open.
 
 ### SCSS
 
-I trigger the opening/closing of the modal by using an anchor link and the CSS pseudo selector `:target`. When the hamburger that is lined to `#open-navigation` is clicked, the browser targets the element with that ID and gives that element the `:target` pseudo selector. Taking advantage of that, I can switch the modal by the presence of the `:target` pseudo selector on the modal container element.
+I trigger the opening/closing of the modal by using an anchor link and the CSS pseudo selector `:target`.
+When the hamburger that is lined to `#open-navigation` is clicked, the browser targets the element with that ID and gives that element the `:target` pseudo selector.
+Taking advantage of that, I can switch the modal by the presence of the `:target` pseudo selector on the modal container element.
 
 {% raw %}
 
