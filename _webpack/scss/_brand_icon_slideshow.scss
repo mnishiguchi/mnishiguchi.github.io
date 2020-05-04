@@ -17,7 +17,7 @@ $icon-count: 40;
     width: ($icon-side-length + $icon-padding) * $icon-count;
     height: 100%;
     transform: translate3d(0, 0, 0);
-    animation: mn-moveSlideshow 30s linear infinite;
+    animation: mn-MoveSlideshow 30s linear infinite;
   }
 
   &-icon {
@@ -32,7 +32,7 @@ $icon-count: 40;
   }
 }
 
-@keyframes mn-moveSlideshow {
+@keyframes mn-MoveSlideshow {
   100% {
     transform: translateX(-66.6666%);
   }
