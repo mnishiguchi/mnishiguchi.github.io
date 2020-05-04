@@ -23,7 +23,7 @@ module.exports = {
     }),
     // https://webpack.js.org/plugins/copy-webpack-plugin/
     new CopyPlugin([
-      // Copy Fa SVG icons to assets dir
+      // Copy vendor SVG icons to assets dir
       {
         from: 'node_modules/@fortawesome/fontawesome-free/svgs/regular',
         to: 'assets/images/fontawesome',
@@ -38,6 +38,7 @@ module.exports = {
         from: 'node_modules/simple-icons/icons',
         to: 'assets/images/brands',
         toType: 'dir',
+        ignore: ['*.js']
       },
     ]),
     // new ServiceWorkerWebpackPlugin({
