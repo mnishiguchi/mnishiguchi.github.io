@@ -1,10 +1,10 @@
 # Default config: https://jekyllrb.com/docs/configuration/default/
 title: Masatoshi Nishiguchi
-description: Software engineer who strives to write code with clean architecture, using Ruby, JS, React and more.
+description: Software engineer who strives to write maintainable code with clean architecture, using Ruby, JS, React and more.
 permalink: pretty
-url: "https://mnishiguchi-jekyll.netlify.app"
+url: "https://mnishiguchi.com"
 baseurl: ""
-# ga_id: "UA-76603801-1"
+ga_id: "UA-76603801-1"
 author:
   name: Masatoshi Nishiguchi
 include:
