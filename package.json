@@ -4,7 +4,6 @@
   "scripts": {
     "develop": "bundle exec foreman start -f Procfile.dev",
     "build": "webpack --mode production && JEKYLL_ENV=production jekyll build",
-    "webpack-build": "webpack --mode production",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "clean": "jekyll clean"
   },
