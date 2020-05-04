@@ -15,9 +15,13 @@ pre.highlight {
   background: $mn-blue;
   margin-bottom: 2rem;
 
+  &-title {
+    margin: 1.5rem auto !important;
+  }
+
   &-container {
     padding-top: 2rem;
-    padding-bottom: .5rem;
+    padding-bottom: 0;
   }
 
   * {
