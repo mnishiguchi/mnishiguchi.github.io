@@ -13,10 +13,15 @@ main {
   min-height: 80vh;
 }
 
+// Ajustment for syntax highlighting
 pre.highlight {
   // Make default text color white because the background is dark.
   color: white;
   padding: .5rem;
+
+  span.s2 {
+    color: white;
+  }
 }
 
 .mn-AppHeader {
