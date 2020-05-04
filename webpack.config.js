@@ -3,6 +3,7 @@ const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 // const ServiceWorkerWebpackPlugin = require("serviceworker-webpack-plugin");
 
 module.exports = {
@@ -20,6 +21,25 @@ module.exports = {
       filename: 'assets/[name]-bundle.css',
       chunkFilename: '[id].css',
     }),
+    // https://webpack.js.org/plugins/copy-webpack-plugin/
+    new CopyPlugin([
+      // Copy Fa SVG icons to assets dir
+      {
+        from: 'node_modules/@fortawesome/fontawesome-free/svgs/regular',
+        to: 'assets/images/fontawesome/svgs',
+        toType: 'dir',
+      },
+      {
+        from: 'node_modules/@fortawesome/fontawesome-free/svgs/solid',
+        to: 'assets/images/fontawesome/svgs',
+        toType: 'dir',
+      },
+      {
+        from: 'node_modules/simple-icons/icons',
+        to: 'assets/images/brands',
+        toType: 'dir',
+      },
+    ]),
     // new ServiceWorkerWebpackPlugin({
     //   entry: path.join(__dirname, "webpack", "sw.js"),
     // }),

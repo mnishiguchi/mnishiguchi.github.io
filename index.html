@@ -28,13 +28,11 @@ layout: application
           {% assign n = site.static_files | size %}
           {% assign shuffled_static_files = site.static_files | sample: n %}
 
-          {% for image in shuffled_static_files %}
-            {% if image.path contains "assets/images/brands" %}
-              <div class="mn-Slideshow-icon"
-                title="{{ image.path | replace: 'assets/images/brands/' | replace: '/' | replace: '.svg' }}">
-                {% svg "{{ image.path }}" %}
-              </div>
-            {% endif %}
+          {% for icon_name in site.data.i_enjoy_icons %}
+            <div class="mn-Slideshow-icon"
+              title="{{ icon_name }}">
+              {% svg "assets/images/brands/{{ icon_name }}.svg" %}
+            </div>
           {% endfor %}
         </div>
       </div>

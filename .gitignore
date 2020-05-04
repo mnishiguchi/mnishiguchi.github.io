@@ -26,3 +26,5 @@ node_modules
 
 # Webpack output
 assets/main-bundle.*
+assets/images/brands
+assets/images/fontawesome
