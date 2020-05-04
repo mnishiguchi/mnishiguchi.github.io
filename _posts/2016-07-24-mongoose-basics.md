@@ -31,8 +31,6 @@ tags:
 | Update             | `Model.update!(key: value)`                 | `Model.findOneAndUpdate({key: value}, update, callback)` OR `Model.findByIdAndUpdate(id, update, callback)` |
 | Delete             | `Model.destroy(id)`                         | `Model.findByIdAndRemove(id, callback)`                                                                     |
 
----
-
 ## References
 
 - [ga-wdi-lessons/mongoose-intro](https://github.com/ga-wdi-lessons/mongoose-intro)

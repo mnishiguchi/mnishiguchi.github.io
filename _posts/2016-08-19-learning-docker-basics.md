@@ -1,22 +1,22 @@
 ---
 layout: post
-title: Docker
+title: Learning Docker basics
 comments: true
 tags:
   - vagrant
   - docker
 ---
 
-## Docker
+Today I studied Docker so I wrote down my notes.
 
-### Benefit
+## Benefit
 
 - Separation of concerns
 - Fast dev cycle
 - Portability
 - Scalability
 
-### Docker platform
+## Docker platform
 
 > A platform for developing, shipping and running apps, using container visualization technology.
 
@@ -27,7 +27,7 @@ tags:
   - Docker Swarm
   - Docker Compose
 
-### Architecture
+## Architecture
 
 ![](https://docs.docker.com/engine/article-img/architecture.svg)
 
@@ -47,14 +47,14 @@ CLIENT -------->  - Container
                   - Container
 ```
 
-### Containers and images
+## Containers and images
 
 - Image: read-only
 - Container:
   - contains everything needed to run an application
   - can contain multiple images
 
-### Registry (DockerHub)
+## Registry (DockerHub)
 
 - The public registry that contains a large number of images available for your use.
 - We can search for official repositories and download them from DockerHub.
@@ -73,7 +73,7 @@ Local    <--pull---  DockerHub
                      + repo
 ```
 
-### Basic commands
+## Basic commands
 
 ```bash
 # Run a command in a new container:
