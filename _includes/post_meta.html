@@ -1,0 +1,22 @@
+<!--
+Obtain time and tags that are associated with current page/post.
+-->
+{% if post %}
+  {% assign date = post.date %}
+  {% assign tags = post.tags %}
+{% else %}
+  {% assign date = page.date %}
+  {% assign tags = page.tags %}
+{% endif %}
+
+<time datetime="{{ date | date_to_xmlschema }}" class="badge badge badge-light">
+  {{ date | date_to_string }}
+</time>
+<span>
+  <!--
+  Display all the tag names that link to a corresponding section of the Tags page.
+  -->
+  {% for tag in tags %}
+    <a href="/tags#{{ tag | slugize }}" class="badge badge-secondary">{{ tag }}</a>
+  {% endfor %}
+</span>

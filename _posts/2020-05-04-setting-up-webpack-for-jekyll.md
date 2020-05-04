@@ -203,7 +203,6 @@ module.exports = {
 - Note: The `./main.scss` file needs to be imported here.
 
 ```js
-
 import Turbolinks from 'turbolinks';
 
 import initDisqus from './js/initDisqus';
@@ -220,9 +219,9 @@ initDisqus();
 - It is imported in the `./main.js` file.
 
 ```scss
-@import "scss/variables";
-@import "~bootstrap/scss/bootstrap.scss";
-@import "scss/highlight";
+@import 'scss/variables';
+@import '~bootstrap/scss/bootstrap.scss';
+@import 'scss/highlight';
 
 body {
   -webkit-font-smoothing: antialiased;

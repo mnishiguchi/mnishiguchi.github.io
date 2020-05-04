@@ -1,7 +1,4 @@
-<header>
-  <time datetime="{{ page.date | date_to_xmlschema }}">
-    {{ page.date | date: "%B %-d, %Y" }}
-  </time>
+<header class="mb-4">
   <h1>
     {% if include.disable_link %}
       {{ page.title }}
@@ -9,4 +6,8 @@
       <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
     {% endif %}
   </h1>
+
+  <div>
+    {% include post_meta.html %}
+  </div>
 </header>

@@ -38,7 +38,7 @@ module.exports = {
         from: 'node_modules/simple-icons/icons',
         to: 'assets/images/brands',
         toType: 'dir',
-        ignore: ['*.js']
+        ignore: ['*.js'],
       },
     ]),
     // new ServiceWorkerWebpackPlugin({

@@ -8,22 +8,19 @@ tags:
   - unix
 ---
 
-When I was learning basics on Linux operating system following Linux Foundation's [online lectures](https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-0) a few month ago, I created a simple bash script that helps create a new git repository.
+I learned basics on Linux operating system following Linux Foundation's [online lectures](https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-0) a few month ago. After writing more than several [practice scripts](https://github.com/mnishiguchi/linux_and_git_notebook/tree/master/bin)
+for the sake of learning, I decided to write a practical custom command to create a new project directory and initialize it as a local git repository.
 
-## [git_mkdir](https://github.com/mnishiguchi/git_mkdir)
+I jus thought it was a great opportunity to utilize what I learned. Just as usual, I started by googling around for general ideas. As it turned out, it was pretty straightforward. All we need to do is just place the script in `/usr/local/bin` to make my custom scripts globally available.
 
-The purposes of creating that script were:
+## My goals
 
-- for me to understand how bash scripts work and
-- to create a tool that I can actually use in my usual web development workflow.
+- to understand how bash scripts work
+- to create a tool that I can actually use in my usual web development workflow
 
-After writing more than several [practice scripts](https://github.com/mnishiguchi/linux_and_git_notebook/tree/master/bin)
-for the sake of learning, I decided to write a practical custom command to
-create a new project directory and initialize it as a local git repository.
+## Creating `git_mkdir` script
 
-Today I recall that script and tried to use it, but it could not be run from Desktop of my MacBook Air. I thought now is the time to learn how to make a bash script global.
-
-Just as usual, I google around to get general ideas. As it turned out, it was pretty straightforward. All we need to do is just place the script in `/usr/local/bin`.
+- [repo](https://github.com/mnishiguchi/git_mkdir)
 
 ```bash
 #!/bin/bash
@@ -55,6 +52,36 @@ ls -hartl
 
 # Tell the user that this script is done.
 echo "Done!"
+```
+
+## How to run a custom script?
+
+- This is not so useful for a global use.
+
+```
+sh path/to/the/script
+```
+
+## How to make a shell script global?
+
+- TL;DR: Place a script file in `/usr/local/bin`
+- [stackoverflow](https://stackoverflow.com/questions/3560326/how-to-make-a-shell-script-global)
+
+```sh
+# Move to the directory that contains the script file
+cd path/to/script/dir
+
+# Make a symlink to /usr/local/bin/
+ln -sf $PWD/git_mkdir /usr/local/bin/
+
+# Verify the symlink creation
+ls -a /usr/local/bin/ | grep git_mkdir
+```
+
+Now I can run the command from anywhere.
+
+```
+git_mkdir
 ```
 
 ## Conclusion
