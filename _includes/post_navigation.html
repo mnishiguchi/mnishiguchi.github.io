@@ -2,13 +2,13 @@
   <nav class="row mn-PostNavigation">
     {% if page.next.url %}
       <div class="col-sm-6">
-        <a class="btn btn-primary" href="{{ page.next.url }}">« {{ page.next.title }}</a>
+        <a class="btn btn-primary" href="{{ page.next.url }}" style="height:100%">« {{ page.next.title }}</a>
       </div>
     {% endif %}
 
     {% if page.previous.url %}
       <div class="col-sm-6">
-        <a class="btn btn-primary" href="{{ page.previous.url }}">{{ page.previous.title }} »</a>
+        <a class="btn btn-primary float-right" href="{{ page.previous.url }}" style="height:100%">{{ page.previous.title }} »</a>
       </div>
     {% endif %}
   </nav>
