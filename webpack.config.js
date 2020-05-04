@@ -26,12 +26,12 @@ module.exports = {
       // Copy Fa SVG icons to assets dir
       {
         from: 'node_modules/@fortawesome/fontawesome-free/svgs/regular',
-        to: 'assets/images/fontawesome/svgs',
+        to: 'assets/images/fontawesome',
         toType: 'dir',
       },
       {
         from: 'node_modules/@fortawesome/fontawesome-free/svgs/solid',
-        to: 'assets/images/fontawesome/svgs',
+        to: 'assets/images/fontawesome',
         toType: 'dir',
       },
       {

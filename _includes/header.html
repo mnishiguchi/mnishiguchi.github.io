@@ -6,7 +6,9 @@
     <nav class="d-flex mn-AppHeader-nav">
       {% for nav_link in site.data.nav_links %}
       <a class="mn-AppHeader-navLink {% if nav_link.href == page.url %} mn-AppHeader-navLink--active {% endif %}"
-        href="{{ nav_link.href }}"><i class="{{ nav_link.fa_icon }}"></i></a>
+        href="{{ nav_link.href }}">
+        {% svg "{{ nav_link.svg_path }}" %}
+      </a>
       {% endfor %}
     </nav>
   </div>
