@@ -5,8 +5,8 @@
     </h1>
     <nav class="d-flex ">
       {% for each in site.icon_links %}
-      <a class="nav-link {% if each[1] == page.url %} active {% endif %}" href="{{ each[1] }}"
-        style="font-size: 1.5rem;"><i class="fa fa-{{ each[0] }}"></i></a>
+      <a class="mn-AppHeader-navLink {% if each[1] == page.url %} mn-AppHeader-navLink--active {% endif %}"
+        href="{{ each[1] }}" style="font-size: 1.5rem;"><i class="fa fa-{{ each[0] }}"></i></a>
       {% endfor %}
     </nav>
   </div>
