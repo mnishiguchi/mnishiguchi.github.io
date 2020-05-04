@@ -3,10 +3,10 @@
     <h1 class="mn-AppHeader-title">
       {{ site.title }}
     </h1>
-    <nav class="d-flex ">
-      {% for each in site.icon_links %}
-      <a class="mn-AppHeader-navLink {% if each[1] == page.url %} mn-AppHeader-navLink--active {% endif %}"
-        href="{{ each[1] }}" style="font-size: 1.5rem;"><i class="fa fa-{{ each[0] }}"></i></a>
+    <nav class="d-flex mn-AppHeader-nav">
+      {% for nav_link in site.data.nav_links %}
+      <a class="mn-AppHeader-navLink {% if nav_link.href == page.url %} mn-AppHeader-navLink--active {% endif %}"
+        href="{{ nav_link.href }}"><i class="{{ nav_link.fa_icon }}"></i></a>
       {% endfor %}
     </nav>
   </div>

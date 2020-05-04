@@ -24,24 +24,33 @@ pre.highlight {
     padding-bottom: 0;
   }
 
-  *:not(a):not(i) {
+  &-nav {
+    height: 52px;
+  }
+
+  *:not(a) {
     color: white;
   }
 
   &-navLink {
     display: block;
     padding: .5rem 1rem;
-    color: white;
-    :hover {
-      color: lighten($link-color, 50%);
+    font-size: 1.5rem;
+    path {
+      fill: white;
+    }
+    :hover path {
+      fill: lighten($link-color, 50%);
     }
   }
 
   &-navLink--active {
-    color: lighten($link-color, 50%);
     cursor: default;
     text-decoration: none;
     pointer-events: none;
+    path {
+      fill: lighten($link-color, 50%) !important;
+    }
   }
 }
 

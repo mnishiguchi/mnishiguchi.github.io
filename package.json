@@ -11,6 +11,7 @@
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
+    "@fortawesome/fontawesome-free": "^5.13.0",
     "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
     "bootstrap": "^4.4.1",

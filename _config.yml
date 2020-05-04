@@ -24,12 +24,5 @@ plugins:
   - jekyll-gist
   - jekyll-seo-tag
   - jekyll-inline-svg
-# https://fontawesome.com/v4.7.0/icons/
-icon_links:
-  - [home, /]
-  - [sticky-note, /posts]
-  - [github, "https://github.com/mnishiguchi"]
-  - [linkedin, "https://linkedin.com/in/mnishiguchi"]
-  - [stack-overflow, "https://stackoverflow.com/users/3837223/mnishiguchi"]
 read_more_text: "read more »"
 empty_array: []
