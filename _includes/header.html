@@ -12,10 +12,13 @@
 <nav class="mn-AppHeaderNav">
   <div class="container d-flex">
     {% for nav_link in site.data.nav_links %}
-    <a class="mn-AppHeaderNav-navLink {% if nav_link.href == page.url %} mn-AppHeaderNav-navLink--active {% endif %}"
-      href="{{ nav_link.href }}">
-      {% svg "{{ nav_link.svg_path }}" %}
-    </a>
+      <a class="mn-AppHeaderNav-navLink {% if nav_link.href == page.url %} mn-AppHeaderNav-navLink--active {% endif %}"
+        href="{{ nav_link.href }}">
+        {% svg "{{ nav_link.svg_path }}" %}
+      </a>
     {% endfor %}
+    <a class="mn-AppHeaderNav-navLink mn-AppHeaderNav-arrow">
+      {% svg "assets/images/fontawesome/arrow-down.svg" %}
+    </a>
   </div>
 </nav>

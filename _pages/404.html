@@ -6,5 +6,28 @@ sitemap: false
 ---
 
 <div class="page">
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ site.url }}/">Head back home</a> to try finding it again.</p>
+  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.
+    <a href="{{ site.url }}/">Head back home</a> to try finding it again.</p>
 </div>
+
+<hr>
+
+<section>
+  <h2>Hello widget</h2>
+
+  <div data-controller="hello">
+    <div class="form-row">
+      <div class="col-auto">
+        <input data-target="hello.name" type="text" placeholder="Type your name" class="form-control" name="name" required>
+      </div>
+      <div class="col-auto">
+        <button data-action="click->hello#greet" class="btn btn-secondary">Greet</button>
+        <button data-action="click->hello#clear" class="btn btn-light">Clear</button>
+      </div>
+    </div>
+
+    <div class="alert alert-success mt-2" role="alert" id="js-HelloAlert" style="display:none">
+      <p id="js-HelloAlert-text"></p>
+    </div>
+  </div>
+</section>
