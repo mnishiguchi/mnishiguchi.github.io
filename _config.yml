@@ -25,4 +25,3 @@ plugins:
   - jekyll-seo-tag
   - jekyll-inline-svg
 read_more_text: "read more »"
-empty_array: []

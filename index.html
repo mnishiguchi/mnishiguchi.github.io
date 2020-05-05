@@ -3,22 +3,24 @@ title: Home
 layout: application
 ---
 
-<div class="card" style="width:402px;overflow: hidden;">
-  <figure class="mn-MasaChinatownWrapper">
-    <svg id="MasaChinatown" class="mn-SvgLineDrawing-svg" width="400" height="400" viewBox="0 0 400 400"
-      xmlns="http://www.w3.org/2000/svg">
-      <path d="M 0.00,0.00
-          C 0.00,0.00 0.00,400.00 0.00,400.00
-            0.00,400.00 389.00,400.00 389.00,400.00
-            391.77,399.99 395.44,400.29 397.69,398.40
-            401.28,395.38 400.00,381.80 400.00,377.00
-            400.00,377.00 400.00,307.00 400.00,307.00
-            400.00,307.00 400.00,0.00 400.00,0.00
-            400.00,0.00 0.00,0.00 0.00,0.00 Z" />
-    </svg>
-    <img data-svg="MasaChinatown" class="mn-SvgLineDrawing-imgHidden" src="/assets/images/masa-chinatown--mint.png"
-      alt="{{ site.author.name }}">
-  </figure>
+<div class="card" style="max-width:402px;overflow: hidden">
+  <div style="overflow-x:auto">
+    <figure class="mn-MasaChinatownWrapper">
+      <svg id="MasaChinatown" class="mn-SvgLineDrawing-svg" width="400" height="400" viewBox="0 0 400 400"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0.00,0.00
+            C 0.00,0.00 0.00,400.00 0.00,400.00
+              0.00,400.00 389.00,400.00 389.00,400.00
+              391.77,399.99 395.44,400.29 397.69,398.40
+              401.28,395.38 400.00,381.80 400.00,377.00
+              400.00,377.00 400.00,307.00 400.00,307.00
+              400.00,307.00 400.00,0.00 400.00,0.00
+              400.00,0.00 0.00,0.00 0.00,0.00 Z" />
+      </svg>
+      <img data-svg="MasaChinatown" class="mn-SvgLineDrawing-imgHidden" src="/assets/images/masa-chinatown--mint.png"
+        alt="{{ site.author.name }}">
+    </figure>
+  </div>
   <div class="card-body">
     <p class="lead">
       I am passionate about building maintainable apps using primarily Ruby, Rails, Javascript and React. Also I know and
@@ -37,11 +39,13 @@ layout: application
         </div>
       </div>
     </p>
-    <hr>
+  </div>
+  <div style="overflow-x:auto">
     <a href="https://twitter.com/danmactough/status/756272997057564673">
       <img src="{% link assets/images/masa-talk.jpg %}" alt="Masa at NodeDC Lightning talks" style="width:360px;height:160px">
     </a>
-    <hr>
+  </div>
+  <div style="overflow-x:auto">
     <a href="https://www.certmetrics.com/amazon/public/badge.aspx?i=9&t=c&d=2020-01-03&ci=AWS01001895&dm=80">
       <img src="{% link assets/images/aws-certified-logo_color-horz_360x60.jpg %}" alt="" style="width:360px;height:60px">
     </a>
