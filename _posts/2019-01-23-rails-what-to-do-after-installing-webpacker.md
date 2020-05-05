@@ -4,7 +4,7 @@ title: Rails - what to do after installing webpacker
 tags:
   - ruby
   - rails
-  - webpacker
+  - webpack
 comments: true
 ---
 

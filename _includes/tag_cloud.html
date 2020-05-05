@@ -40,7 +40,7 @@ Sort by count
   {% for tag_name_with_count in sorted_by_count %}
     {% assign tmp = tag_name_with_count | strip | split: " (" %}
     {% assign tag_name_only = tmp[0] %}
-    <a class="btn btn-light my-1" href="/tags#{{ tag_name_only | slugize }}">
+    <a class="btn btn-light my-1" href="/tags#{{ tag_name_only | slugize }}" data-turbolinks-action="replace">
       {{ tag_name_with_count }}
     </a>
   {% endfor %}

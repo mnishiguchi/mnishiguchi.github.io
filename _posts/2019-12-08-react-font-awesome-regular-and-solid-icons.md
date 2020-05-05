@@ -3,7 +3,7 @@ layout: post
 title: 'React Font Awesome regular and solid icons '
 tags:
   - react
-  - font-awesome
+  - fontawesome
   - icon
 comments: true
 ---

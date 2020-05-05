@@ -3,7 +3,7 @@ layout: post
 title: React disable submit event triggered by pressing the enter key
 comments: true
 tags:
-  - js
+  - javascript
   - react
   - form
 ---
