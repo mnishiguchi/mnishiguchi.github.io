@@ -1,8 +1,10 @@
-@import "scss/variables";
-@import "~bootstrap/scss/bootstrap.scss";
-@import "scss/highlight";
-@import "scss/svg_drawing_animation";
-@import "scss/brand_icon_slideshow";
+@import 'scss/variables';
+@import '~bootstrap/scss/bootstrap.scss';
+@import 'scss/highlight';
+@import 'scss/svg_drawing_animation';
+@import 'scss/brand_icon_slideshow';
+
+$mn-app-header-bg: transparentize(darken($mn-blue, .3), .1);
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -13,23 +15,33 @@ main {
   min-height: 80vh;
 }
 
-// Ajustment for syntax highlighting
+// Adjustment for syntax highlighting
 pre.highlight {
   // Make default text color white because the background is dark.
   color: white;
-  padding: .5rem;
+  padding: 0.5rem;
 
   span.s2 {
     color: white;
   }
 }
 
+// https://gomakethings.com/how-to-animate-scrolling-to-anchor-links-with-one-line-of-css/
+.mn-SmoothScroll {
+  scroll-behavior: smooth;
+
+  // Disable smooth scrolling when users have prefers-reduced-motion enabled
+  @media screen and (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
 .mn-AppHeader {
-  background: $mn-blue;
-  margin-bottom: 2rem;
+  background: $mn-app-header-bg;
+  margin-bottom: 0;
 
   &-title {
-    margin: 1.5rem auto !important;
+    font-size: 2.5rem;
   }
 
   &-container {
@@ -37,9 +49,18 @@ pre.highlight {
     padding-bottom: 0;
   }
 
-  &-nav {
-    height: 52px;
+  *:not(a) {
+    color: white;
   }
+}
+
+.mn-AppHeaderNav {
+  background: $mn-app-header-bg;
+  margin-bottom: 0;
+  height: 52px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 
   *:not(a) {
     color: white;
@@ -47,7 +68,7 @@ pre.highlight {
 
   &-navLink {
     display: block;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     width: 58px;
     height: 58px;
     svg {
@@ -89,6 +110,6 @@ pre.highlight {
 .mn-PostNavigation {
   // In case elements are stacked in mobile mode.
   > * {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 }

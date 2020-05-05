@@ -1,15 +1,18 @@
 <header class="mn-AppHeader">
   <div class="container mn-AppHeader-container">
-    <h1 class="mn-AppHeader-title">
+    <div class="mn-AppHeader-title">
       {{ site.title }}
-    </h1>
-    <nav class="d-flex mn-AppHeader-nav">
-      {% for nav_link in site.data.nav_links %}
-      <a class="mn-AppHeader-navLink {% if nav_link.href == page.url %} mn-AppHeader-navLink--active {% endif %}"
-        href="{{ nav_link.href }}">
-        {% svg "{{ nav_link.svg_path }}" %}
-      </a>
-      {% endfor %}
-    </nav>
+    </div>
   </div>
 </header>
+
+<nav class="mn-AppHeaderNav">
+  <div class="container d-flex">
+    {% for nav_link in site.data.nav_links %}
+    <a class="mn-AppHeaderNav-navLink {% if nav_link.href == page.url %} mn-AppHeaderNav-navLink--active {% endif %}"
+      href="{{ nav_link.href }}">
+      {% svg "{{ nav_link.svg_path }}" %}
+    </a>
+    {% endfor %}
+  </div>
+</nav>
