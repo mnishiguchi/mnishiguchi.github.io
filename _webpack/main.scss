@@ -38,20 +38,30 @@ pre.highlight {
 
 .mn-AppHeader {
   background: $mn-app-header-bg;
-  margin-bottom: 0;
-
-  &-title {
-    font-size: 2.5rem;
-  }
-
-  &-container {
-    padding-top: 2rem;
-    padding-bottom: 0;
-  }
 
   *:not(a) {
     color: white;
   }
+
+  &-title {
+    // Note: I am doing mobile first development.
+    font-size: 2.0rem;
+    line-height: 1.2;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &-subtitle {
+    font-size: 1.3rem;
+    line-height: 1.2;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 1.5rem;
+    }
+  }
+
 }
 
 .mn-AppHeaderNav {
