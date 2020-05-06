@@ -45,7 +45,15 @@ module.exports = {
     // https://developers.google.com/web/tools/workbox/guides/generate-service-worker/webpack
     // https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin
     // https://developers.google.com/web/tools/workbox/guides/precache-files
-    new WorkboxPlugin.GenerateSW(),
+    new WorkboxPlugin.GenerateSW({
+      swDest: 'sw.js',
+      // Instructs the latest service worker to take control of all clients as soon as it's activated.
+      clientsClaim: true,
+      // Instructs the latest service worker to activate as soon as it enters the waiting phase.
+      skipWaiting: true,
+      // Do not precache images.
+      exclude: [/\.(?:png|jpg|jpeg|svg)$/],
+    }),
   ],
   // https://webpack.js.org/configuration/resolve/
   resolve: {
@@ -60,10 +68,7 @@ module.exports = {
         parallel: true,
         sourceMap: true, // set to true if you want JS source maps
       }),
-      new OptimizeCSSAssetsPlugin({
-        // Do not precache images
-        exclude: [/\.(?:png|jpg|jpeg|svg)$/],
-      }),
+      new OptimizeCSSAssetsPlugin({}),
     ],
   },
   module: {

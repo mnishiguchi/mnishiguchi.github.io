@@ -6,5 +6,5 @@ public
 images
 assets
 manifest.json
-service-worker*
+sw*
 workbox*
