@@ -1,9 +1,12 @@
 import { Application } from 'stimulus';
 import { definitionsFromContext } from 'stimulus/webpack-helpers';
 
-import './controllers';
+import './controllers/hello_controller';
+import './controllers/page_scroll_controller';
 
-// https://stimulusjs.org/handbook/installing
+// Installation: https://stimulusjs.org/handbook/installing
+// API Reference: https://stimulusjs.org/reference/controllers
+// Naming conventions: https://stimulusjs.org/reference/controllers#naming-conventions
 export default () => {
   const application = Application.start();
   const context = require.context('./controllers', true, /\.js$/);

@@ -17,8 +17,9 @@
         {% svg "{{ nav_link.svg_path }}" %}
       </a>
     {% endfor %}
-    <a class="mn-AppHeaderNav-navLink mn-AppHeaderNav-arrow">
-      {% svg "assets/images/fontawesome/arrow-down.svg" %}
-    </a>
+
+    <div class="mn-AppHeaderNav-navLink">
+      {% include page_scroll_button.html %}
+    </div>
   </div>
 </nav>
