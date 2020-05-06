@@ -6,7 +6,6 @@
 // Color system
 
 $mn-blue: #082031;
-$mn-mint: #339269;
 
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
@@ -37,16 +36,17 @@ $grays: map-merge(
   $grays
 );
 
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
+// https://material.io/resources/color
+$blue:    #2962FF !default;
+$indigo:  #304FFE !default;
+$purple:  #AA00FF !default;
+$pink:    #C51162 !default;
+$red:     #D50000 !default;
+$orange:  #FF6D00 !default;
+$yellow:  #FFD600 !default;
+$green:   #00C853 !default;
+$teal:    #00BFA5 !default;
+$cyan:    #00B8D4 !default;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -69,7 +69,7 @@ $colors: map-merge(
   $colors
 );
 
-$primary:       $mn-mint !default;
+$primary:       $blue !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -107,9 +107,9 @@ $body-color:                $gray-900 !default;
 //
 // Style anchor elements.
 
-$link-color:                              darken(theme-color("primary"), 15%) !default;
+$link-color:                              theme-color("primary") !default;
 $link-decoration:                         none !default;
-$link-hover-color:                        theme-color("primary") !default;
+$link-hover-color:                        darken($link-color, 15%) !default;
 $link-hover-decoration:                   underline !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 15% !default;

@@ -24,7 +24,7 @@
     transition: opacity 0.5s;
     path {
       fill: none;
-      stroke-width: 3;
+      stroke-width: 1;
       stroke: #aaa;
     }
   }
@@ -43,6 +43,6 @@
   margin-bottom: 0;
 
   path {
-    stroke: $mn-mint;
+    stroke: $link-color;
   }
 }

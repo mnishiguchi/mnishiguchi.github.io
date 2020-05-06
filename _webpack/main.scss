@@ -91,7 +91,7 @@ pre.highlight {
       fill: white;
     }
     :hover path {
-      fill: lighten($link-color, 50%);
+      fill: lighten($link-color, 30%);
     }
   }
 
@@ -100,7 +100,7 @@ pre.highlight {
     text-decoration: none;
     pointer-events: none;
     path {
-      fill: lighten($link-color, 50%) !important;
+      fill: lighten($link-color, 30%) !important;
     }
   }
 }
