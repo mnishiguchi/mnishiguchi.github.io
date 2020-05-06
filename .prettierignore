@@ -5,3 +5,6 @@ public
 *-bundle.*
 images
 assets
+manifest.json
+service-worker*
+workbox*

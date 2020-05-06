@@ -1,2 +1,2 @@
-jekyll: bundle exec jekyll clean && jekyll serve --watch
-webpack: rm -f workbox* && webpack --watch --mode development
+jekyll: jekyll serve --watch
+webpack: webpack --watch --mode development

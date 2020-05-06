@@ -1,10 +1,13 @@
 # Default config: https://jekyllrb.com/docs/configuration/default/
 title: Masatoshi Nishiguchi
-description: Software engineer who strives to write maintainable code with clean architecture, using Ruby, JS, React and more.
+short_title: Masa
+theme_color: "#082031"
+description: Software engineer who strives to write maintainable clean apps using Ruby, JS, React and more.
 permalink: pretty
 url: "https://mnishiguchi.com"
 baseurl: ""
 ga_id: "UA-76603801-1"
+icon_dir: "/assets/images/icons"
 author:
   name: Masatoshi Nishiguchi
 include:
