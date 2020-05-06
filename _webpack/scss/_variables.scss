@@ -130,3 +130,15 @@ $border-radius-lg:            0 !default;
 $border-radius-sm:            0 !default;
 
 $rounded-pill:                0 !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 960px
+) !default;
