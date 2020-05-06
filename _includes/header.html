@@ -18,8 +18,12 @@
       </a>
     {% endfor %}
 
-    <div class="mn-AppHeaderNav-navLink">
-      {% include page_scroll_button.html %}
+    <div data-controller="page-scroll"
+      data-action="click->page-scroll#scrollPage scroll@document->page-scroll#adjustArrow"
+      class="mn-AppHeaderNav-navLink">
+      <span style="padding-top:6px">
+        {% svg "assets/images/fontawesome/arrow-down.svg" %}
+      </span>
     </div>
   </div>
 </nav>

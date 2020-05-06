@@ -9,6 +9,8 @@ Masatoshi Nishiguchi's blog powered by Jekyll.
 - https://jekyllrb.com/
 - https://shopify.github.io/liquid/
 - https://webpack.js.org/
+- https://stimulusjs.org/reference/controllers
+- https://github.com/turbolinks/turbolinks
 - https://listjs.com/
 - https://tympanus.net/codrops/2013/12/30/svg-drawing-animation/
 - https://netlify.com/
