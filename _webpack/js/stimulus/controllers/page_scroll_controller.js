@@ -9,12 +9,12 @@ const currentPosition = () =>
 const shouldScrollToTop = () => SCROLL_THRESHOLD < currentPosition();
 
 export default class extends Controller {
-  static targets = [];
+  static targets = ['arrowIcon'];
 
   // https://stimulusjs.org/handbook/managing-state#lifecycle-callbacks-explained
   connect = () => {
     console.log('page_scroll#connect', this.element);
-    this.element.style.transition = 'transform 0.3s ease-out';
+    this.arrowIconTarget.style.transition = 'transform 0.3s ease-out';
   };
 
   scrollPage = () =>
@@ -34,12 +34,12 @@ export default class extends Controller {
   scrollDown = () => this.element.scrollIntoView();
 
   pointArrowDown = () => {
-    this.element.style.transform = 'rotate(0deg)';
+    this.arrowIconTarget.style.transform = 'rotate(0deg)';
     this.data.delete(DATA_KEY_ARROW_UP);
   };
 
   pointArrowUp = () => {
-    this.element.style.transform = 'rotate(180deg)';
+    this.arrowIconTarget.style.transform = 'rotate(180deg)';
     this.data.set(DATA_KEY_ARROW_UP, 0);
   };
 
