@@ -4,7 +4,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-// const ServiceWorkerWebpackPlugin = require("serviceworker-webpack-plugin");
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -41,9 +41,11 @@ module.exports = {
         ignore: ['*.js'],
       },
     ]),
-    // new ServiceWorkerWebpackPlugin({
-    //   entry: path.join(__dirname, "webpack", "sw.js"),
-    // }),
+    // https://developers.google.com/web/tools/workbox/guides/codelabs/webpack
+    // https://developers.google.com/web/tools/workbox/guides/generate-service-worker/webpack
+    // https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin
+    // https://developers.google.com/web/tools/workbox/guides/precache-files
+    new WorkboxPlugin.GenerateSW(),
   ],
   // https://webpack.js.org/configuration/resolve/
   resolve: {
@@ -58,7 +60,10 @@ module.exports = {
         parallel: true,
         sourceMap: true, // set to true if you want JS source maps
       }),
-      new OptimizeCSSAssetsPlugin({}),
+      new OptimizeCSSAssetsPlugin({
+        // Do not precache images
+        exclude: [/\.(?:png|jpg|jpeg|svg)$/],
+      }),
     ],
   },
   module: {

@@ -28,3 +28,5 @@ node_modules
 assets/main-bundle.*
 assets/images/brands
 assets/images/fontawesome
+service-worker*
+workbox*

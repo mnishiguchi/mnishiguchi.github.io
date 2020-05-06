@@ -4,6 +4,7 @@ import initStimulus from './js/stimulus';
 import initDisqus from './js/disqus';
 import initList from './js/list';
 import initSvgDrawingAnimation from './js/svgDrawingAnimation';
+import initServiceWorker from './js/serviceWorker';
 
 import './main.scss';
 
@@ -14,3 +15,4 @@ initStimulus();
 initDisqus();
 initList();
 initSvgDrawingAnimation();
+initServiceWorker();
