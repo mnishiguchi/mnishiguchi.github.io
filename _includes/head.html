@@ -2,7 +2,11 @@
   <meta charSet="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   {% seo title=false %}
+
+  <meta name="theme-color" content="{{ site.theme_color }}">
+
   <title>
     {% if page.url == "/" %}
     {{ site.title }}
@@ -11,9 +15,15 @@
     {% endif %}
   </title>
 
-  <link rel="icon" type="image/png" href="{% link /assets/images/favicon-16x16.png %}" />
   <link rel="stylesheet" href="{% link /assets/main-bundle.css %}">
+
+  <link rel="icon" type="image/png" href="{% link /assets/images/icons/favicon.ico %}" />
+  <link rel="icon" type="image/png" size="16x16" href="{% link /assets/images/icons/icon-16x16.png %}" />
+  <link rel="icon" type="image/png" size="32x32" href="{% link /assets/images/icons/icon-32x32.png %}" />
+  <link rel="icon" type="image/png" size="180x180" href="{% link /assets/images/icons/icon-180x180.png %}" />
+
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{% link atom.xml %}">
+  <link rel="sitemap" type="application/xml" href="{% link sitemap.xml %}">
   <link rel="manifest" href="{% link manifest.json %}">
 
   <script src="{% link /assets/main-bundle.js %}"></script>
@@ -28,7 +38,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', '{{ site.ga_id }}');
     </script>
