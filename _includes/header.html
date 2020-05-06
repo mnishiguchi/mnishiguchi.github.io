@@ -10,13 +10,15 @@
 </header>
 
 <nav class="mn-AppHeaderNav">
-  <div class="container d-flex">
-    {% for nav_link in site.data.nav_links %}
-      <a class="mn-AppHeaderNav-navLink {% if nav_link.href == page.url %} mn-AppHeaderNav-navLink--active {% endif %}"
-        href="{{ nav_link.href }}">
-        {% svg "{{ nav_link.svg_path }}" %}
-      </a>
-    {% endfor %}
+  <div class="container d-flex justify-content-between">
+    <div class="d-flex">
+      {% for nav_link in site.data.nav_links %}
+        <a class="mn-AppHeaderNav-navLink {% if nav_link.href == page.url %} mn-AppHeaderNav-navLink--active {% endif %}"
+          href="{{ nav_link.href }}">
+          {% svg "{{ nav_link.svg_path }}" %}
+        </a>
+      {% endfor %}
+    </div>
 
     <div data-controller="page-scroll" class="mn-AppHeaderNav-navLink" style="margin-top:6px">
       <div data-target="page-scroll.arrowIcon"
