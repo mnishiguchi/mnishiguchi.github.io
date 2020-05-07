@@ -1,38 +1,48 @@
 import { Controller } from 'stimulus';
 
-// Stimulus controllers are instances of JavaScript classes whose methods can act as event handlers.
 export default class extends Controller {
-  static targets = ['name'];
+  static targets = ['name', 'message'];
 
-  // Called each time this controller is connected to the document.
   // https://stimulusjs.org/handbook/managing-state#lifecycle-callbacks-explained
-  connect() {
-    console.log('hello#connect', this.element);
-  }
+  connect = () => console.log('hello#connect');
 
-  greet() {
+  greet = () => {
     console.log('hello#greet');
-    const helloText = `Hello, ${this.name || 'there'}!`;
-    this.findHelloAlertElement().style.display = 'block';
-    this.findHelloAlertTextElement().innerText = helloText;
-  }
+    this.renderMessage({
+      alertType: this.name ? 'success' : 'secondary',
+      message: this.name
+        ? `Hello, ${this.name}!`
+        : `Hello, try typing your name!`,
+    });
+  };
 
-  clear() {
+  clear = () => {
     console.log('hello#clear');
+    this.clearName();
+    this.clearMessage();
+  };
+
+  clearName = () => {
     this.nameTarget.value = '';
-    this.findHelloAlertElement().style.display = 'none';
-    this.findHelloAlertTextElement().innerText = '';
-  }
+  };
+
+  renderMessage = ({ alertType, message }) => {
+    // Looks like Stimulus automatically sanitizes HTML. Try pasting this into the form:
+    // <script>alert("XSS Attack");</script>
+    this.messageTarget.innerHTML = this.messageTemplate({ alertType, message });
+  };
+
+  clearMessage = () => {
+    this.messageTarget.innerHTML = '';
+  };
+
+  messageTemplate = ({ alertType, message }) => `
+    <div class="alert alert-${alertType}" role="alert">
+      <p>${message}</p>
+    </div>
+  `;
 
   get name() {
     return this.nameTarget.value;
-  }
-
-  findHelloAlertElement() {
-    return document.querySelector('#js-HelloAlert');
-  }
-
-  findHelloAlertTextElement() {
-    return document.querySelector('#js-HelloAlert-text');
   }
 }

@@ -6,37 +6,45 @@ sitemap: false
 ---
 
 <div class="page">
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.
-    <a href="{{ site.url }}/">Head back home</a> to try finding it again.</p>
+  <div class="alert alert-info" role="alert">
+    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.
+      <a href="{{ site.url }}/">Head back home</a> to try finding it again.</p>
+  </div>
 </div>
 
 <hr>
 
-<section>
-  <h2>Hello widget</h2>
+<h2>Some experiments</h2>
+<p>
+  Here I do experiments for web development.
+</p>
 
+<section>
+  <h3>Hello widget</h3>
   <div data-controller="hello">
     <div class="form-row">
       <div class="col-auto">
         <input data-target="hello.name" type="text" placeholder="Type your name" class="form-control">
       </div>
       <div class="col-auto">
+        <button data-action="click->hello#clear" class="btn btn-light">x</button>
+      </div>
+      <div class="col-auto">
         <button data-action="click->hello#greet" class="btn btn-secondary">Greet</button>
-        <button data-action="click->hello#clear" class="btn btn-light">Clear</button>
       </div>
     </div>
-
-    <div class="alert alert-success mt-2" role="alert" id="js-HelloAlert" style="display:none">
-      <p id="js-HelloAlert-text"></p>
-    </div>
+    <div data-target="hello.message" class="mt-2"></div>
   </div>
 </section>
 
 <hr>
 
-<iframe
-  src="https://codesandbox.io/embed/rotating-an-element-programmatically-gl0cx?fontsize=14&hidenavigation=1&theme=dark"
-  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-  title="Rotating an element programmatically"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+<section>
+  <h3>Rotating an element programmatically</h3>
+  <iframe
+    src="https://codesandbox.io/embed/rotating-an-element-programmatically-gl0cx?fontsize=14&hidenavigation=1&theme=dark"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    title="Rotating an element programmatically"
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+</section>
