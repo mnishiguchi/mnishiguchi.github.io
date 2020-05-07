@@ -1,2 +1,2 @@
 jekyll: jekyll serve --watch
-webpack: webpack --watch --mode development
+webpack: yarn webpack --mode development --watch

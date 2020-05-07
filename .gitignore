@@ -28,5 +28,5 @@ node_modules
 assets/main-bundle.*
 assets/images/brands
 assets/images/fontawesome
-assets/sw.js
-assets/workbox-*.js
+assets/sw.*
+assets/workbox-*
