@@ -6,7 +6,7 @@ const DATA_KEY_ARROW_UP = 'arrow-up';
 const currentPosition = () =>
   Math.abs(document.body.getBoundingClientRect().top);
 
-const shouldScrollToTop = () => SCROLL_THRESHOLD < currentPosition();
+const shouldScrollToTop = () => SCROLL_THRESHOLD <= currentPosition();
 
 export default class extends Controller {
   static targets = ['arrowIcon'];
