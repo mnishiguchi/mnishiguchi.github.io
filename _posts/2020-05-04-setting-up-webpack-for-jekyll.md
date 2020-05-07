@@ -52,15 +52,12 @@ yarn add --dev \
   css-loader \
   cssnano \
   file-loader \
-  mini-css-extract-plugin \
   node-sass \
-  optimize-css-assets-webpack-plugin \
   postcss-cssnext \
   postcss-loader \
   sass-loader \
   style-loader \
   uglifyjs-webpack-plugin \
-  url-loader \
   webpack-cli \
   webpack-dev-server \
   webpack
@@ -92,24 +89,18 @@ Then the app structure will be like this:
 ├── _posts
 ├── _site
 ├── _webpack
-│   ├── js                # JS modules to be imported in the main.js file.
-│   │   └── initDisqus.js
-│   ├── main.js           # main JS filel; the webpack entrypoint.
-│   ├── main.scss         # main SCSS file; be sure to import this file in main.js file.
-│   └── scss              # SCSS partials to be imported in the main.scss file.
-│       ├── _highlight.scss
-│       └── _variables.scss
+│   ├── js              # JS modules to be imported in the main.js file.
+│   ├── main.js         # main JS filel; the webpack entrypoint.
+│   ├── main.scss       # main SCSS file; be sure to import this file in main.js file.
+│   └── scss            # SCSS partials to be imported in the main.scss file.
 ├── assets
 │   ├── images
-│   │   ├── favicon-16x16.png
-│   │   └── uploads
-│   ├── main-bundle.css # Webpack outputs CSS bundle here.
-│   └── main-bundle.js  # Webpack outputs JS bundle here.
+│   └── main-bundle.js  # Webpack outputs JS bundle here. This contains CSS as well.
 ├── index.html
 ├── node_modules
 ├── package.json
 ├── Procfile.dev
-├── webpack.config.js # Webpack config
+├── webpack.config.js   # Webpack config
 └── yarn.lock
 ```
 
@@ -118,34 +109,23 @@ Then the app structure will be like this:
 Here is a basic setup.
 
 ```js
-// https://webpack.js.org/configuration/
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
+// https://webpack.js.org/configuration/
 module.exports = {
-  mode: 'production',
   entry: {
     main: path.join(__dirname, '_webpack', 'main'),
   },
   output: {
-    filename: 'assets/[name]-bundle.js',
-    path: path.resolve(__dirname),
+    path: path.resolve(__dirname, 'assets'),
+    filename: '[name]-bundle.js',
   },
-  plugins: [
-    // https://webpack.js.org/plugins/mini-css-extract-plugin/
-    new MiniCssExtractPlugin({
-      filename: 'assets/[name]-bundle.css',
-      chunkFilename: '[id].css',
-    }),
-  ],
-  // https://webpack.js.org/configuration/resolve/
   resolve: {
     extensions: ['.json', '.js', '.jsx'],
     modules: ['node_modules'],
   },
-  node: { fs: 'empty' },
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
@@ -153,7 +133,6 @@ module.exports = {
         parallel: true,
         sourceMap: true, // set to true if you want JS source maps
       }),
-      new OptimizeCSSAssetsPlugin({}),
     ],
   },
   module: {
@@ -163,30 +142,22 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: 'css-loader',
             options: {
-              publicPath: '../',
+              importLoaders: 1, // https://webpack.js.org/loaders/postcss-loader/
             },
           },
-          { loader: 'css-loader', options: { importLoaders: 1 } },
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [require('cssnano')()],
+              plugins: () => [
+                require('cssnano')(), // https://cssnano.co/
+              ],
             },
           },
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
           {
-            loader: 'url-loader',
-            options: {
-              name: 'assets/images/[name].[ext]',
-              limit: 50000,
-            },
+            loader: 'sass-loader',
+            options: {},
           },
         ],
       },
@@ -202,21 +173,21 @@ module.exports = {
 - I also initialize JS code here as needed.
 - Note: The `./main.scss` file needs to be imported here.
 
+Here is an example:
+
 ```js
 import Turbolinks from 'turbolinks';
-
-import initDisqus from './js/initDisqus';
-
 import './main.scss';
 
 Turbolinks.start();
-initDisqus();
 ```
 
 ## _webpack/main.scss
 
 - This is my top-level SCSS file.
 - It is imported in the `./main.js` file.
+
+Here is an example:
 
 ```scss
 @import 'scss/variables';
@@ -258,8 +229,8 @@ touch Procfile.dev
 Then fill it in with the following:
 
 ```sh
-jekyll: bundle exec jekyll clean && jekyll serve --watch
-webpack: webpack --watch
+jekyll: jekyll serve --watch
+webpack: webpack --watch --mode development
 ```
 
 Now I can run both the Jekyll server and Webpack server by running:
@@ -275,8 +246,8 @@ Personally I like defining convenient commands in `package.json`. Here is an exa
 ```json
   ...
   "scripts": {
-    "develop": "bundle exec foreman start -f Procfile.dev",
-    "build": "webpack --mode production && JEKYLL_ENV=production jekyll build",
+    "develop": "yarn clean && bundle exec foreman start -f Procfile.dev",
+    "build": "yarn clean && webpack --mode production && JEKYLL_ENV=production jekyll build",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "clean": "jekyll clean"
   },

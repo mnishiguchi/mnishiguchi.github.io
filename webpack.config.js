@@ -1,24 +1,27 @@
-// https://webpack.js.org/configuration/
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
+const PATHS = {
+  src: path.join(__dirname, '_webpack'),
+  dest: path.join(__dirname, 'assets'),
+};
+
+// https://webpack.js.org/configuration/
 module.exports = {
-  mode: 'production',
   entry: {
-    main: path.join(__dirname, '_webpack', 'main'),
+    main: path.join(PATHS.src, 'main'),
   },
   output: {
-    filename: 'assets/[name]-bundle.js',
-    path: path.resolve(__dirname),
+    path: PATHS.dest,
+    filename: '[name]-bundle.js',
   },
   plugins: [
     // https://webpack.js.org/plugins/mini-css-extract-plugin/
     new MiniCssExtractPlugin({
-      filename: 'assets/[name]-bundle.css',
+      filename: '[name]-bundle.css',
       chunkFilename: '[id].css',
     }),
     // https://webpack.js.org/plugins/copy-webpack-plugin/
@@ -26,17 +29,17 @@ module.exports = {
       // Copy vendor SVG icons to assets dir
       {
         from: 'node_modules/@fortawesome/fontawesome-free/svgs/regular',
-        to: 'assets/images/fontawesome',
+        to: 'images/fontawesome',
         toType: 'dir',
       },
       {
         from: 'node_modules/@fortawesome/fontawesome-free/svgs/solid',
-        to: 'assets/images/fontawesome',
+        to: 'images/fontawesome',
         toType: 'dir',
       },
       {
         from: 'node_modules/simple-icons/icons',
-        to: 'assets/images/brands',
+        to: 'images/brands',
         toType: 'dir',
         ignore: ['*.js'],
       },
@@ -60,7 +63,6 @@ module.exports = {
     extensions: ['.json', '.js', '.jsx'],
     modules: ['node_modules'],
   },
-  node: { fs: 'empty' },
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
@@ -68,43 +70,40 @@ module.exports = {
         parallel: true,
         sourceMap: true, // set to true if you want JS source maps
       }),
-      new OptimizeCSSAssetsPlugin({}),
     ],
   },
   module: {
     rules: [
       // https://babeljs.io/setup#installation
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
       {
         test: /\.scss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader, // Extracts CSS into separate files
+            options: {},
+          },
+          {
+            loader: 'css-loader',
             options: {
-              // you can specify a publicPath here
-              // by default it use publicPath in webpackOptions.output
-              publicPath: '../',
+              importLoaders: 1, // https://webpack.js.org/loaders/postcss-loader/
             },
           },
-          { loader: 'css-loader', options: { importLoaders: 1 } },
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [require('cssnano')()],
+              plugins: () => [
+                require('cssnano')(), // https://cssnano.co/
+              ],
             },
           },
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
           {
-            loader: 'url-loader',
-            options: {
-              name: 'assets/images/[name].[ext]',
-              limit: 50000,
-            },
+            loader: 'sass-loader',
+            options: {},
           },
         ],
       },

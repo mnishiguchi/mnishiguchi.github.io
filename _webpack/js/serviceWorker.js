@@ -1,3 +1,5 @@
+const swPath = '/assets/sw.js';
+
 // https://developers.google.com/web/tools/workbox/guides/generate-service-worker/webpack
 export default function () {
   // Check that service workers are supported
@@ -5,7 +7,7 @@ export default function () {
     // Use the window load event to keep the page load performant
     window.addEventListener('turbolinks:load', () => {
       navigator.serviceWorker
-        .register('/sw.js')
+        .register(swPath)
         .then((registration) => {
           console.log('SW registered: ', registration);
         })
