@@ -33,7 +33,9 @@ sitemap: false
         <button data-action="click->hello#greet" class="btn btn-secondary">Greet</button>
       </div>
     </div>
-    <div data-target="hello.message" class="mt-2"></div>
+    <div data-target="hello.alert" class="mt-2 alert" role="alert" style="display:none">
+      <p data-target="hello.message"></p>
+    </div>
   </div>
 </section>
 

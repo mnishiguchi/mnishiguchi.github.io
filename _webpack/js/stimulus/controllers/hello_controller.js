@@ -1,10 +1,15 @@
 import { Controller } from 'stimulus';
 
+const alertClassNames = {
+  success: 'alert-success',
+  secondary: 'alert-secondary',
+};
+
 export default class extends Controller {
-  static targets = ['name', 'message'];
+  static targets = ['name', 'alert', 'message'];
 
   // https://stimulusjs.org/handbook/managing-state#lifecycle-callbacks-explained
-  connect = () => console.log('hello#connect');
+  connect = () => console.log('hello#connect', this.element);
 
   greet = () => {
     console.log('hello#greet');
@@ -29,18 +34,17 @@ export default class extends Controller {
   renderMessage = ({ alertType, message }) => {
     // Looks like Stimulus automatically sanitizes HTML. Try pasting this into the form:
     // <script>alert("XSS Attack");</script>
-    this.messageTarget.innerHTML = this.messageTemplate({ alertType, message });
+    this.alertTarget.style.display = 'block';
+    this.alertTarget.classList.add(alertClassNames[alertType]);
+    this.messageTarget.innerHTML = message;
   };
 
   clearMessage = () => {
+    this.alertTarget.style.display = 'none';
+    this.alertTarget.classList.remove(alertClassNames.success);
+    this.alertTarget.classList.remove(alertClassNames.secondary);
     this.messageTarget.innerHTML = '';
   };
-
-  messageTemplate = ({ alertType, message }) => `
-    <div class="alert alert-${alertType}" role="alert">
-      <p>${message}</p>
-    </div>
-  `;
 
   get name() {
     return this.nameTarget.value;
