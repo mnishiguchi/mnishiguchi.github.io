@@ -1,2 +1,4 @@
-jekyll: jekyll serve --watch
+# Allow some time for Wepback to build assets.
+jekyll: sleep 5 && jekyll serve --watch
+
 webpack: yarn webpack --mode development --watch

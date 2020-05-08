@@ -7,12 +7,13 @@ tags:
 comments: true
 ---
 
-Jekyll is nice and reliable static site generator; however when it comes to using modern Javascript, Jekyll does not seem to have a clear solution or convention. After all, I decided to set up Webpack minimally. Things went well so I just wanted to log what I did here.
+Jekyll is nice and reliable static site generator; however when it comes to using modern Javascript, Jekyll does not seem to have a clear solution or convention. After all, I decided to set up Webpack minimally because it is the cleanest solution to me after trying other solutions by trial and error. Things went well so I just wanted to talk about what I did.
 
 ## My goals
 
 - Use ES6+ Javascript.
 - Manage vendor libraries through Yarn.
+- Keep config minimal.
 
 ## Dependencies
 
@@ -39,7 +40,7 @@ ruby 2.6.2p47 (2019-03-13 revision 67232) [x86_64-darwin19]
 
 ## Get started
 
-I get intimidated by the huge overall size of the Webpack config file, but looking at one by once and reading documentations, most sections make sense to me. Also, once configured, I reuse it for other projects without thinking much about details because I know it is working.
+At first, the Webpack config file came across as cryptic and scary, but focusing on one section at a time and reading documentations well, it is actually pretty simple. Also, once configured, I can reuse it for other projects without thinking much about details because I know it is working.
 
 ### Install webpack, loaders, some useful plugins:
 
@@ -51,7 +52,6 @@ yarn add --dev \
   babel-preset-env \
   css-loader \
   cssnano \
-  file-loader \
   node-sass \
   postcss-cssnext \
   postcss-loader \
@@ -59,13 +59,12 @@ yarn add --dev \
   style-loader \
   uglifyjs-webpack-plugin \
   webpack-cli \
-  webpack-dev-server \
   webpack
 ```
 
 ## App structure plan
 
-I am planning to get Webpack to load my files from `_webpack` directory and output bundles to `assets` directory.
+I get Webpack to load my files from `_webpack` directory and output bundles to `assets` directory.
 
 Run these for creating necessary directories and files:
 
@@ -229,7 +228,9 @@ touch Procfile.dev
 Then fill it in with the following:
 
 ```sh
-jekyll: jekyll serve --watch
+# Allow some time for Wepback to build assets.
+jekyll: sleep 5 && jekyll serve --watch
+
 webpack: webpack --watch --mode development
 ```
 
@@ -259,8 +260,9 @@ Now I can run:
 - `yarn develop` for running development servers (Webpack and Jekyll)
 - `yarn build` for production build
 
-In the development environment, once the servers are started, I can view the app at http://localhost:4000. Then whenever files are changed, Webpack will rebuild the bundle, which Jekyll detect and update the pages.
+In the development environment, once the servers are started, I can view the app at http://localhost:4000. Then whenever files are changed, Webpack will rebuild my asset bundle, which Jekyll detect and update my pages.
 
-So far I have no issue with this set up. Webpack is extensible. I add plugins as needed while I keep the config as simple as possible.
+So far I have no issue with this set up. Webpack is extensible but I keep the config as simple as possible.
+I use Webpack only for bundling JS and CSS. For other tasks, I can just write adhoc scipt in bash or node, which I found  is better than using random plugins.
 
 That's it.

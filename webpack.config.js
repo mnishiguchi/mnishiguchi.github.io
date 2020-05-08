@@ -24,26 +24,6 @@ module.exports = {
       filename: '[name]-bundle.css',
       chunkFilename: '[id].css',
     }),
-    // https://webpack.js.org/plugins/copy-webpack-plugin/
-    new CopyPlugin([
-      // Copy vendor SVG icons to assets dir
-      {
-        from: 'node_modules/@fortawesome/fontawesome-free/svgs/regular',
-        to: 'images/fontawesome',
-        toType: 'dir',
-      },
-      {
-        from: 'node_modules/@fortawesome/fontawesome-free/svgs/solid',
-        to: 'images/fontawesome',
-        toType: 'dir',
-      },
-      {
-        from: 'node_modules/simple-icons/icons',
-        to: 'images/brands',
-        toType: 'dir',
-        ignore: ['*.js'],
-      },
-    ]),
     // https://developers.google.com/web/tools/workbox/guides/codelabs/webpack
     // https://developers.google.com/web/tools/workbox/guides/generate-service-worker/webpack
     // https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin

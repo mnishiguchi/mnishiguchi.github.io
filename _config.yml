@@ -15,8 +15,7 @@ include:
 exclude:
   - .*
   - admin/index.js
-  - assets/images/brands
-  - assets/images/fontawesome
+  - assets/images/vendor
   - bin
   - LICENSE*
   - node_modules
