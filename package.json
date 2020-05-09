@@ -11,7 +11,7 @@
     "build:before": "run-s clean copy_vendor_images",
     "build:jekyll": "JEKYLL_ENV=production bundle exec jekyll build",
     "build:webpack": "webpack --mode production",
-    "clean": "bash bin/clean",
+    "clean": "bin/clean",
     "purgecss": "bin/purgecss",
     "copy_vendor_assets": "bin/vendor_assets copy_svgs",
     "format": "prettier --write \"**/*.{js,jsx,json}\""
