@@ -38,17 +38,16 @@ Then my site will no longer need to load extra icons. I won't need their CSS eit
 ### Write some script for copying SVG
 
 
-I think there are multiple ways to copy SVG files in
-At first, I tried Webpack plugins, Gulp plugins, etc. Here are some of the things I tried:
+I think there are so many ways to copy SVG files. At first, I tried:
 
 - [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/)
 - [Gulp](https://gulpjs.com/)
-- Shell scripting
-- Node.js
 
-Then realized it is simple to write my own Node script for the task. Here is an example:
+then I realized it is simple to write my own script for the task. It can be any language but here is an example in Node.js:
 
-```js
+```sh
+#!/usr/bin/env node
+
 const fs = require('fs-extra');
 
 const entries = [
@@ -92,7 +91,7 @@ The [fs-extra](https://www.npmjs.com/package/fs-extra) NPM package is powerful. 
 everything I wanted and to write code in a clean way. Now I can do the task by running:
 
 ```
-> node ./bin/copy_vendor_images.js
+> bin/copy_vendor_images
 
 Copied files recurresively
     from: node_modules/@fortawesome/fontawesome-free/svgs/solid

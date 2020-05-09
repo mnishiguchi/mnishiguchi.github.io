@@ -206,7 +206,7 @@ I like the npm-run-all NPM package because it allows me to organize my custom co
 
 - The `run-s` command: runs given npm-scripts sequentially
 - The `run-p` command: runs given npm-scripts in parallel
-- The above commands accepts glob-like patterns as an argument, which allows me to shorten my scripts
+- The above commands accepts glob-like patterns as an argument, which allows me to shorten my scripts for parallel execution
 
 ## Define commands in `package.json`
 
