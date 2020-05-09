@@ -108,7 +108,6 @@ Here is a basic setup.
 ```js
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 
 // https://webpack.js.org/configuration/
 module.exports = {
@@ -219,7 +218,7 @@ Personally I like defining convenient commands in `package.json`. Here is an exa
     "develop": "bundle exec jekyll clean && run-p develop:{webpack,jekyll}",
     "develop:jekyll": "sleep 5 && bundle exec jekyll serve --watch",
     "develop:webpack": "webpack --mode development --watch",
-    "build": "bundle exec jekyll clean && run-s build:{webpack,jekyll}",
+    "build": "run-s build:webpack build:jekyll purgecss",
     "build:jekyll": "JEKYLL_ENV=production bundle exec jekyll build",
     "build:webpack": "webpack --mode production",
     ...

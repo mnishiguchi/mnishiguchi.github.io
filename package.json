@@ -3,17 +3,17 @@
   "private": true,
   "scripts": {
     "webpack": "webpack",
-    "develop": "(run-s develop:before) && run-p develop:{webpack,jekyll}",
+    "develop": "yarn develop:before && run-p develop:{webpack,jekyll}",
     "develop:before": "run-s clean copy_vendor_assets",
     "develop:jekyll": "sleep 5 && bundle exec jekyll serve --watch",
     "develop:webpack": "webpack --mode development --watch",
     "build": "run-s build:before build:webpack build:jekyll purgecss",
-    "build:before": "run-s clean copy_vendor_images",
+    "build:before": "run-s clean copy_vendor_assets",
     "build:jekyll": "JEKYLL_ENV=production bundle exec jekyll build",
     "build:webpack": "webpack --mode production",
-    "clean": "bin/clean",
-    "purgecss": "bin/purgecss",
-    "copy_vendor_assets": "bin/vendor_assets copy_svgs",
+    "clean": "bundle exec bin/clean",
+    "purgecss": "bundle exec bin/purgecss",
+    "copy_vendor_assets": "bundle exec bin/copy_vendor_assets",
     "format": "prettier --write \"**/*.{js,jsx,json}\""
   },
   "devDependencies": {

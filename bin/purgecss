@@ -1,77 +1,71 @@
-#!/usr/bin/env node
+#!/usr/bin/env ruby
+# frozen_string_literal: true
 
-const glob = require('glob');
-const fs = require('fs');
-const { PurgeCSS } = require('purgecss');
+require 'rubygems'
+require 'thor'
+require 'pathname'
+require 'fileutils'
 
-// https://purgecss.com/configuration.html#options
-const PATHS = {
-  content: glob.sync(`_site/**/*.html`),
-  css: glob.sync(`_site/assets/main-bundle.css`),
-};
+class PurgeCss < Thor
+  # https://github.com/erikhuda/thor/wiki/Making-An-Executable
+  def self.exit_on_failure?
+    true
+  end
 
-const printConfig = () =>
-  console.log(
-    'config',
-    `
-      content: ${PATHS.content.length.toString().padStart(3, ' ')} files
-      css:     ${PATHS.css.length.toString().padStart(3, ' ')} files`
-  );
+  # https://purgecss.com/configuration.html#options
+  CONTENT_FILES = Dir.glob('_site/**/*.html')
+  CSS_FILES = Dir.glob('_site/assets/main-bundle.css')
+  OUTPUT_DIR = '_site/assets'
 
-const printResult = ({ file, sizeBefore, sizeAfter, diff }) =>
-  console.log(
-    file,
-    `
-      before: ${sizeBefore.toString().padStart(8, ' ')}
-      after:  ${sizeAfter.toString().padStart(8, ' ')}
-      diff:   ${diff.toString().padStart(8, ' ')}`
-  );
+  # https://github.com/himanoa/touch_erb/pull/3/files
+  default_task :purgecss
 
-// Check CSS file sizes so that I can compare before and after later.
-const buildCssSizeLookup = () =>
-  PATHS.css.reduce((acc, cssFile) => {
-    try {
-      const data = fs.readFileSync(cssFile, 'utf8');
-      acc[cssFile] = data.length;
-      return acc;
-    } catch (err) {
-      console.error(err);
-    }
-  }, {});
+  desc 'purgecss', 'Remove unused CSS'
+  def purgecss
+    css_size_lookup = build_css_size_lookup
+    print_config
+    system("purgecss #{purgecss_option}")
+    print_results(css_size_lookup)
+  end
 
-// For some reason, PurgeCSS's output option is not working so I need to update CSS file by myself.
-// https://github.com/FullHuman/purgecss-docs/issues/5#issuecomment-381926354
-const saveFile = (file, data) => {
-  fs.writeFile(file, data, (err) => {
-    console.log(err ? err : `Saved ${file}`);
-  });
-};
+  private
 
-(async function execute() {
-  const cssSizeLookup = buildCssSizeLookup();
-  if (!cssSizeLookup) {
-    console.error(`Error building CSS size lookup`);
-    return;
-  }
+  def print_results(css_size_lookup)
+    CSS_FILES.each do |css_file|
+      size_before = css_size_lookup[css_file]
+      size_after = File.size(css_file)
+      print_result(css_file, size_before, size_after)
+    end
+  end
 
-  printConfig();
+  def print_config
+    puts <<~LOG
+      content: #{CONTENT_FILES.size.to_s.rjust(8, ' ')} files
+      css:     #{CSS_FILES.size.to_s.rjust(8, ' ')} files
+      output:  #{OUTPUT_DIR}
+    LOG
+  end
 
-  // https://purgecss.com/api.html#usage
-  const results = await new PurgeCSS().purge({
-    content: PATHS.content,
-    css: PATHS.css,
-  });
+  def print_result(css_file, size_before, size_after)
+    puts <<~LOG
+      #{css_file}
+        size_before: #{size_before.to_s.rjust(8, ' ')}
+        size_after:  #{size_after.to_s.rjust(8, ' ')}
+        diff:        #{(size_after - size_before).to_s.rjust(8, ' ')}
+    LOG
+  end
 
-  results.forEach(({ css, file, rejected }) => {
-    if (rejected) {
-      console.error(`PurgeCSS rejected ${file}`);
-      return;
-    }
-    const sizeBefore = cssSizeLookup[file];
-    const sizeAfter = css.length;
-    const diff = sizeAfter - sizeBefore;
-    printResult({ file, sizeBefore, sizeAfter, diff });
+  def build_css_size_lookup
+    CSS_FILES.each_with_object({}) do |css_file, lookup|
+      lookup[css_file] = File.size(css_file)
+    end
+  end
 
-    if (diff < 0) saveFile(file, css);
-  });
-})();
+  def purgecss_option
+    "--css #{CSS_FILES.join(',')} "\
+    "--content #{CONTENT_FILES.join(',')} "\
+    "--output #{OUTPUT_DIR}"
+  end
+end
+
+PurgeCss.start(ARGV)

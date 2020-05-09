@@ -6,13 +6,16 @@ require 'thor'
 require 'pathname'
 require 'fileutils'
 
-class VendorAssets < Thor
+class CopyVendorAssets < Thor
   # https://github.com/erikhuda/thor/wiki/Making-An-Executable
   def self.exit_on_failure?
     true
   end
 
   DEST_DIR = Pathname.new('assets/images/vendor')
+
+  # https://github.com/himanoa/touch_erb/pull/3/files
+  default_task :copy_svgs
 
   desc 'copy_svgs', "Copy SVGs to #{DEST_DIR}"
   def copy_svgs
@@ -54,4 +57,4 @@ class VendorAssets < Thor
   end
 end
 
-VendorAssets.start(ARGV)
+CopyVendorAssets.start(ARGV)
