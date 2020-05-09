@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'rubygems'
+require 'thor'
+require 'pathname'
+require 'fileutils'
+
+class VendorAssets < Thor
+  def self.exit_on_failure?
+    true
+  end
+
+  DEST_DIR = Pathname.new('assets/images/vendor')
+
+  desc 'copy_svgs', "Copy SVGs to #{DEST_DIR}"
+  def copy_svgs
+    copy_fa_regular_svgs
+    copy_fa_solid_svgs
+    copy_simple_icons
+  end
+
+  private
+
+  def copy_fa_regular_svgs
+    src = Dir.glob('node_modules/@fortawesome/fontawesome-free/svgs/regular/*.svg')
+    dest = DEST_DIR + 'fontawesome-regular'
+    do_copy(src, dest)
+  end
+
+  def copy_fa_solid_svgs
+    src = Dir.glob('node_modules/@fortawesome/fontawesome-free/svgs/solid/*.svg')
+    dest = DEST_DIR + 'fontawesome-solid'
+    do_copy(src, dest)
+  end
+
+  def copy_simple_icons
+    src = Dir.glob('node_modules/simple-icons/icons/*.svg')
+    dest = DEST_DIR + 'simple-icons'
+    do_copy(src, dest)
+  end
+
+  def do_copy(src, dest)
+    FileUtils.mkdir_p(dest)
+    file_count = src.is_a?(Enumerable) ? src.size : 1
+    src_dirname = Pathname.new(src.to_a.first).dirname
+
+    if FileUtils.cp_r(src, dest)
+      puts "Copied #{file_count} files from #{src_dirname} to #{dest}"
+    else
+      puts "Error copying files from #{src_dirname} to #{dest}"
+    end
+  end
+end
+
+VendorAssets.start(ARGV)

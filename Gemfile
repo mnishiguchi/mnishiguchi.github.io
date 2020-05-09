@@ -5,3 +5,4 @@ gem 'jekyll-seo-tag'
 gem "jekyll-gist"
 gem "jekyll-inline-svg"
 gem "jekyll", "~> 4.0"
+gem "thor"
