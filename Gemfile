@@ -2,7 +2,6 @@
 source "https://rubygems.org"
 
 gem 'jekyll-seo-tag'
-gem "foreman"
 gem "jekyll-gist"
 gem "jekyll-inline-svg"
 gem "jekyll", "~> 4.0"

@@ -49,11 +49,9 @@ yarn add --dev \
   @babel/core \
   @babel/preset-env \
   babel-loader \
-  babel-preset-env \
   css-loader \
   cssnano \
   node-sass \
-  postcss-cssnext \
   postcss-loader \
   sass-loader \
   style-loader \
@@ -203,42 +201,13 @@ main {
 }
 ```
 
-## Install foreman (Ruby gem)
+## Install npm-run-all NPM package
 
-I use foreman gem so that I can run both the Jekyll server and Webpack server simultaneously.
+I like the npm-run-all NPM package because it allows me to organize my custom commands. Long story short, I found these featuers useful:
 
-In `Gemfile` include:
-
-```rb
-gem "foreman"
-```
-
-then run:
-
-```
-bundle install
-```
-
-Create `Procfile.dev` file.
-
-```
-touch Procfile.dev
-```
-
-Then fill it in with the following:
-
-```sh
-# Allow some time for Wepback to build assets.
-jekyll: sleep 5 && jekyll serve --watch
-
-webpack: webpack --watch --mode development
-```
-
-Now I can run both the Jekyll server and Webpack server by running:
-
-```
-bundle exec foreman start -f Procfile.dev
-```
+- The `run-s` command: runs given npm-scripts sequentially
+- The `run-p` command: runs given npm-scripts in parallel
+- The above commands accepts glob-like patterns as an argument, which allows me to shorten my scripts
 
 ## Define commands in `package.json`
 
@@ -247,10 +216,13 @@ Personally I like defining convenient commands in `package.json`. Here is an exa
 ```json
   ...
   "scripts": {
-    "develop": "yarn clean && bundle exec foreman start -f Procfile.dev",
-    "build": "yarn clean && webpack --mode production && JEKYLL_ENV=production jekyll build",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "clean": "jekyll clean"
+    "develop": "bundle exec jekyll clean && run-p develop:{webpack,jekyll}",
+    "develop:jekyll": "sleep 5 && bundle exec jekyll serve --watch",
+    "develop:webpack": "webpack --mode development --watch",
+    "build": "bundle exec jekyll clean && run-s build:{webpack,jekyll}",
+    "build:jekyll": "JEKYLL_ENV=production bundle exec jekyll build",
+    "build:webpack": "webpack --mode production",
+    ...
   },
   ...
 ```
