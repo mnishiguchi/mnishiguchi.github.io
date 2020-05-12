@@ -8,7 +8,7 @@ const currentPosition = () =>
 
 const shouldScrollToTop = () => SCROLL_THRESHOLD <= currentPosition();
 
-export default class extends Controller {
+export default class PageScrollController extends Controller {
   static targets = ['arrowIcon'];
 
   // https://stimulusjs.org/handbook/managing-state#lifecycle-callbacks-explained
