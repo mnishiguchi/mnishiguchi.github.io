@@ -28,13 +28,13 @@ class CopyVendorAssets < Thor
 
   def copy_fa_regular_svgs
     src = Dir.glob('node_modules/@fortawesome/fontawesome-free/svgs/regular/*.svg')
-    dest = DEST_DIR + 'fontawesome-regular'
+    dest = DEST_DIR + 'fa-regular'
     do_copy(src, dest)
   end
 
   def copy_fa_solid_svgs
     src = Dir.glob('node_modules/@fortawesome/fontawesome-free/svgs/solid/*.svg')
-    dest = DEST_DIR + 'fontawesome-solid'
+    dest = DEST_DIR + 'fa-solid'
     do_copy(src, dest)
   end
 

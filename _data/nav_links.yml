@@ -1,6 +1,6 @@
-- svg_path: 'assets/images/vendor/fontawesome-solid/home.svg'
+- svg_path: 'assets/images/vendor/fa-solid/home.svg'
   href: '/'
-- svg_path: 'assets/images/vendor/fontawesome-regular/sticky-note.svg'
+- svg_path: 'assets/images/vendor/fa-regular/sticky-note.svg'
   href: '/posts'
 - svg_path: 'assets/images/vendor/simple-icons/github.svg'
   href: 'https://github.com/mnishiguchi'

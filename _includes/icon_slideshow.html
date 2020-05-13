@@ -3,10 +3,10 @@
     {% assign n = site.static_files | size %}
     {% assign shuffled_static_files = site.static_files | sample: n %}
 
-    {% for icon_name in site.data.brand_icon_slideshow.icon_names %}
+    {% for icon_name in site.data.icon_slideshow.icon_names %}
       <div class="mn-Slideshow-icon"
         title="{{ icon_name }}">
-        {% svg "assets/images/vendor/simple-icons/{{ icon_name }}.svg" %}
+        {% svg "assets/images/vendor/{{ icon_name }}.svg" %}
       </div>
     {% endfor %}
   </div>
@@ -14,6 +14,6 @@
 
 {% if jekyll.environment != "production" %}
 <!-- <div class="alert alert-dark" role="alert">
-  Icon count: {{ site.data.brand_icon_slideshow.icon_names | size }}
+  Icon count: {{ site.data.icon_slideshow.icon_names | size }}
 </div> -->
 {% endif %}
