@@ -16,7 +16,13 @@ layout: application
   </div>
   <div class="card-body">
     <a href="https://twitter.com/danmactough/status/756272997057564673">
-      <img src="{% link assets/images/masa-talk.jpg %}" alt="Masa at NodeDC Lightning talks" class="img-fluid">
+      <picture>
+        <!-- for larger devices -->
+        <source media="(min-width: 450px)" srcset="{% link assets/images/masa-talk.jpg %}">
+        <!-- for mobile devices -->
+        <img src="{% link assets/images/masa-talk_400x300.jpg %}" alt="Masa at NodeDC Lightning talks"
+          class="img-fluid">
+      </picture>
     </a>
   </div>
   <div class="card-body">
