@@ -2,6 +2,7 @@ import { Application } from 'stimulus';
 import { definitionsFromContext } from 'stimulus/webpack-helpers';
 
 import './controllers/hello_controller';
+import './controllers/icon_slideshow_controller';
 import './controllers/page_scroll_controller';
 
 // Installation: https://stimulusjs.org/handbook/installing

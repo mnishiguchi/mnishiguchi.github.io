@@ -1,11 +1,7 @@
-<div class="mn-Slideshow">
-  <div class="mn-Slideshow-mover">
-    {% assign n = site.static_files | size %}
-    {% assign shuffled_static_files = site.static_files | sample: n %}
-
+<div data-controller="icon-slideshow" class="mn-Slideshow">
+  <div data-target="icon-slideshow.mover" data-action="click->icon-slideshow#shuffleIcons" class="mn-Slideshow-mover">
     {% for icon_name in site.data.icon_slideshow.icon_names %}
-      <div class="mn-Slideshow-icon"
-        title="{{ icon_name }}">
+      <div class="mn-Slideshow-icon" title="{{ icon_name }}">
         {% svg "assets/images/vendor/{{ icon_name }}.svg" %}
       </div>
     {% endfor %}

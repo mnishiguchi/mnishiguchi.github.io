@@ -13,7 +13,7 @@ export default class PageScrollController extends Controller {
 
   // https://stimulusjs.org/handbook/managing-state#lifecycle-callbacks-explained
   connect = () => {
-    console.log('page_scroll#connect', this.element);
+    console.log('page-scroll#connect', this.element);
     this.arrowIconTarget.style.transition = 'transform 0.3s ease-out';
   };
 
