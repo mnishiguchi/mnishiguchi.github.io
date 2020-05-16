@@ -15,20 +15,5 @@ layout: compress
   </main>
 
   {% include footer.html %}
-
-  {% if page.url == "/" %}
-    <script>
-      // https://github.com/netlify/netlify-cms/blob/master/docs/quick-start.md#add-the-netlify-identity-widget
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", function(user) {
-          if (!user) {
-            window.netlifyIdentity.on("login", function() {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
-  {% endif %}
 </body>
 </html>

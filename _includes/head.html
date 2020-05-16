@@ -28,11 +28,6 @@
 
   <script src="{% link /assets/main-bundle.js %}"></script>
 
-  {% if page.url == "/" %}
-    <!-- https://www.netlifycms.org/docs/add-to-your-site/#add-the-netlify-identity-widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  {% endif %}
-
   {% if jekyll.environment == "production" %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}"></script>
