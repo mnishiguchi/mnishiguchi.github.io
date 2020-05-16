@@ -94,14 +94,14 @@ pre.highlight {
     :hover path {
       fill: lighten($link-color, 30%);
     }
-  }
 
-  &-navLink--active {
-    cursor: default;
-    text-decoration: none;
-    pointer-events: none;
-    path {
-      fill: lighten($link-color, 30%) !important;
+    &[aria-current] {
+      cursor: default;
+      text-decoration: none;
+      pointer-events: none;
+      path {
+        fill: lighten($link-color, 30%) !important;
+      }
     }
   }
 }

@@ -12,10 +12,10 @@
 <nav class="mn-AppHeaderNav">
   <div class="container d-flex">
     {% for nav_link in site.data.nav_links %}
-      <a class="mn-AppHeaderNav-navLink {% if nav_link.href == page.url %} mn-AppHeaderNav-navLink--active {% endif %}"
-        href="{{ nav_link.href }}">
-        {% svg "{{ nav_link.svg_path }}" %}
-      </a>
+    <a {% if nav_link.href == page.url %} aria-current="page" {% endif %} href="{{ nav_link.href }}"
+      class="mn-AppHeaderNav-navLink">
+      {% svg "{{ nav_link.svg_path }}" %}
+    </a>
     {% endfor %}
     <div class="flex-grow-1"></div>
     <div data-controller="page-scroll" class="mn-AppHeaderNav-navLink">
