@@ -3,35 +3,22 @@ title: Home
 layout: application
 ---
 
-{% include masa_chinatown.html %}
+<div class="card px" style="max-width:600px;border:none">
+  {% include masa_chinatown.html %}
 
-<div class="card" style="max-width:600px">
-  <div class="card-body">
-    <p class="lead">
-      I am passionate about building maintainable apps using primarily Ruby, Rails, Javascript and React. Also I know and
-      enjoy:
-      {% include icon_slideshow.html %}
-    </p>
-  </div>
-  <div class="card-body">
-    <a href="https://twitter.com/danmactough/status/756272997057564673">
-      <picture>
-        <!-- for larger devices -->
-        <source media="(min-width: 450px)" srcset="{% link assets/images/masa-talk.jpg %}">
-        <!-- for mobile devices -->
-        <img src="{% link assets/images/masa-talk_400x300.jpg %}" alt="Masa at NodeDC Lightning talks"
-          class="img-fluid">
-      </picture>
-    </a>
-  </div>
-  <div class="card-body">
-    <a href="https://www.certmetrics.com/amazon/public/badge.aspx?i=9&t=c&d=2020-01-03&ci=AWS01001895&dm=80">
-      <img src="{% link assets/images/aws-certified-logo_color-horz_360x60.jpg %}" alt="" class="img-fluid">
-    </a>
-  </div>
+  <p class="lead">
+    Primarily, Ruby, Rails, Javascript and React. Also I know and
+    enjoy
+    {% include icon_slideshow.html %}
+  </p>
 </div>
 
-<aside class="mt-3">
-  <h2>Recent Posts</h2>
-  {% include related_posts.html limit=6 %}
-</aside>
+<a href="https://twitter.com/danmactough/status/756272997057564673">
+
+<picture>
+  <!-- for larger devices -->
+  <source media="(min-width: 450px)" srcset="{% link assets/images/masa-talk.jpg %}">
+  <!-- for mobile devices -->
+  <img src="{% link assets/images/masa-talk_400x300.jpg %}" alt="Masa at NodeDC Lightning talks"
+    class="img-fluid">
+</picture>
